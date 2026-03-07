@@ -1,47 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Base64 Encoder / Decoder | Free Tools Hub</title>
-  <meta name="description" content="Encode text to Base64 or decode Base64 back to plain text." />
-  <link rel="stylesheet" href="../css/style.css" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Base64 Encoder Decoder | SmartTools</title>
+<meta name="description" content="Encode and decode Base64 text.">
+<link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-  <main class="container tool-page">
-    <a class="back-link" href="../index.html">&larr; Back to home</a>
-    <div class="tool-wrap" style="margin-top:18px;">
-      <section class="editor">
-        <h1>Base64 Encoder / Decoder</h1>
-        <p class="note">Encode text to Base64 or decode Base64 back to plain text.</p>
-        
-<label for="baseInput">Input</label>
-<textarea id="baseInput" placeholder="Enter text or Base64..."></textarea>
-<div class="actions">
-  <button id="encodeBtn">Encode</button>
-  <button id="decodeBtn">Decode</button>
+<div class="section">
+  <div class="toolbox">
+    <h1>Base64 Encoder Decoder</h1>
+    <p class="desc">Encode and decode Base64 text.</p>
+    <textarea id="input" placeholder="Enter plain text or Base64 text..."></textarea>
+<div class="toolbar">
+  <button class="tool-btn" onclick="enc()">Encode</button>
+  <button class="tool-btn secondary" onclick="dec()">Decode</button>
 </div>
-<div class="output" id="baseOutput"></div>
-
-      </section>
-      <aside class="panel">
-        <h2>About this tool</h2>
-        <p>Encode text to Base64 or decode Base64 back to plain text.</p>
-        <p class="small">Tip: expand each tool page with FAQs and extra examples later for better Google ranking.</p>
-      </aside>
-    </div>
-  </main>
-  <script src="../js/tracking.js"></script>
-  <script>
-document.getElementById('encodeBtn').onclick=function(){
- const val=document.getElementById('baseInput').value;
- document.getElementById('baseOutput').textContent=btoa(unescape(encodeURIComponent(val)));
- trackAction('Base64 encoded');
-};
-document.getElementById('decodeBtn').onclick=function(){
- try{document.getElementById('baseOutput').textContent=decodeURIComponent(escape(atob(document.getElementById('baseInput').value.trim())));trackAction('Base64 decoded');}
- catch(e){document.getElementById('baseOutput').textContent='Invalid Base64 string.';}
-};
+<div id="result" class="result"></div>
+<div class="toolbar"><button class="tool-btn secondary" onclick="copyText(byId('result').innerText)">Copy</button></div>
+    <a class="back-link" href="../index.html">← Back to SmartTools</a>
+  </div>
+</div>
+<script src="../js/helpers.js"></script>
+<script>
+function enc(){ byId('result').innerText = btoa(unescape(encodeURIComponent(byId('input').value))); }
+function dec(){ try{ byId('result').innerText = decodeURIComponent(escape(atob(byId('input').value))); }catch(e){ byId('result').innerText='Invalid Base64'; } }
 </script>
 </body>
 </html>

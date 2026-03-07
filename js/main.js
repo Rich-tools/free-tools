@@ -1,19 +1,36 @@
 
+let allTools = [];
 async function loadTools(){
-const res=await fetch('js/tools.json');
-const tools=await res.json();
-const grid=document.getElementById('tools');
-tools.forEach(t=>{
-let card=document.createElement('div');
-card.className='card';
-card.innerHTML=`<h3>${t.name}</h3><p>${t.desc}</p><a class="open" href="tools/${t.slug}.html">Open Tool</a>`;
-grid.appendChild(card);
-});
+  const res = await fetch('js/tools.json');
+  allTools = await res.json();
+  renderTools(allTools);
 }
-function searchTools(){
-let q=document.getElementById('search').value.toLowerCase();
-document.querySelectorAll('.card').forEach(c=>{
-c.style.display=c.innerText.toLowerCase().includes(q)?'block':'none';
-});
+function renderTools(items){
+  const grid = document.getElementById('toolsGrid');
+  grid.innerHTML = '';
+  items.forEach(t=>{
+    const icon = t.category[0];
+    const card = document.createElement('article');
+    card.className = 'card';
+    card.innerHTML = `
+      <div class="icon">${icon}</div>
+      <h3>${t.name}</h3>
+      <p>${t.desc}</p>
+      <div class="chips"><span class="chip">${t.category}</span><span class="chip">${t.slug}</span></div>
+      <a class="open-btn" href="tools/${t.slug}.html">Open Tool</a>`;
+    grid.appendChild(card);
+  });
+  document.getElementById('toolCount').textContent = items.length;
 }
-loadTools();
+function filterTools(category='All'){
+  const q = document.getElementById('searchInput').value.trim().toLowerCase();
+  document.querySelectorAll('.tab').forEach(el=>el.classList.remove('active'));
+  const active = [...document.querySelectorAll('.tab')].find(el=>el.dataset.cat===category);
+  if(active) active.classList.add('active');
+  const filtered = allTools.filter(t=>{
+    const hay = `${t.name} ${t.category} ${t.desc} ${t.slug}`.toLowerCase();
+    return (category==='All' || t.category===category) && hay.includes(q);
+  });
+  renderTools(filtered);
+}
+document.addEventListener('DOMContentLoaded', loadTools);

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Audio Metadata Viewer | SmartTools</title>
+<meta name="description" content="See audio duration, size, and type.">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<div class="section">
+  <div class="toolbox">
+    <h1>Audio Metadata Viewer</h1>
+    <p class="desc">See audio duration, size, and type.</p>
+    <input class="input" id="file" type="file" accept="audio/*">
+<div id="result" class="result">Upload audio file.</div>
+    <a class="back-link" href="../index.html">← Back to SmartTools</a>
+  </div>
+</div>
+<script src="../js/helpers.js"></script>
+<script>
+byId('file').addEventListener('change', e=>{
+  const file=e.target.files[0]; if(!file) return;
+  const audio=document.createElement('audio'); audio.preload='metadata';
+  audio.onloadedmetadata=()=>{ byId('result').innerText=`Name: ${file.name}\nType: ${file.type||'unknown'}\nSize: ${(file.size/1024).toFixed(1)} KB\nDuration: ${audio.duration.toFixed(2)} sec`; };
+  audio.src=URL.createObjectURL(file);
+});
+</script>
+</body>
+</html>

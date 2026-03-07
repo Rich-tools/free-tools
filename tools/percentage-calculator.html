@@ -1,21 +1,33 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Percentage Calculator</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Percentage Calculator | SmartTools</title>
+<meta name="description" content="Solve common percentage problems.">
 <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-<div class="container">
-<div class="toolbox">
-<h2>Percentage Calculator</h2>
-<p>Calculate percentages</p>
-<input placeholder="Input here">
-<button onclick="alert('Tool running')">Run Tool</button>
-<div class="result">Result area</div>
-<br><a href="../index.html">Back</a>
+<div class="section">
+  <div class="toolbox">
+    <h1>Percentage Calculator</h1>
+    <p class="desc">Solve common percentage problems.</p>
+    <div class="row">
+  <input class="input" id="part" type="number" placeholder="Part">
+  <input class="input" id="whole" type="number" placeholder="Whole">
 </div>
+<div class="toolbar"><button class="tool-btn" onclick="calc()">Calculate</button></div>
+<div id="result" class="result"></div>
+    <a class="back-link" href="../index.html">← Back to SmartTools</a>
+  </div>
 </div>
+<script src="../js/helpers.js"></script>
+<script>
+function calc(){
+  const part = parseFloat(byId('part').value), whole = parseFloat(byId('whole').value);
+  if(!isFinite(part)||!isFinite(whole)||whole===0){ byId('result').innerText='Enter valid numbers'; return; }
+  byId('result').innerText = `${((part/whole)*100).toFixed(2)}%`;
+}
+</script>
 </body>
 </html>

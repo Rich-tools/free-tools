@@ -2,126 +2,163 @@
   {
     "slug": "word-counter",
     "name": "Word Counter",
-    "desc": "Count words and characters"
-  },
-  {
-    "slug": "password-generator",
-    "name": "Password Generator",
-    "desc": "Generate strong passwords"
-  },
-  {
-    "slug": "qr-code-generator",
-    "name": "QR Code Generator",
-    "desc": "Create QR codes"
-  },
-  {
-    "slug": "json-formatter",
-    "name": "JSON Formatter",
-    "desc": "Beautify JSON"
-  },
-  {
-    "slug": "base64-encoder",
-    "name": "Base64 Encoder",
-    "desc": "Encode text to Base64"
-  },
-  {
-    "slug": "url-encoder",
-    "name": "URL Encoder",
-    "desc": "Encode URLs"
-  },
-  {
-    "slug": "age-calculator",
-    "name": "Age Calculator",
-    "desc": "Calculate age"
-  },
-  {
-    "slug": "bmi-calculator",
-    "name": "BMI Calculator",
-    "desc": "Body mass index tool"
-  },
-  {
-    "slug": "percentage-calculator",
-    "name": "Percentage Calculator",
-    "desc": "Calculate percentages"
-  },
-  {
-    "slug": "discount-calculator",
-    "name": "Discount Calculator",
-    "desc": "Sale discount calculator"
-  },
-  {
-    "slug": "loan-calculator",
-    "name": "Loan Calculator",
-    "desc": "Estimate loan payments"
-  },
-  {
-    "slug": "image-resizer",
-    "name": "Image Resizer",
-    "desc": "Resize images"
-  },
-  {
-    "slug": "image-compressor",
-    "name": "Image Compressor",
-    "desc": "Compress images"
-  },
-  {
-    "slug": "image-cropper",
-    "name": "Image Cropper",
-    "desc": "Crop images"
-  },
-  {
-    "slug": "image-base64",
-    "name": "Image to Base64",
-    "desc": "Convert image to base64"
-  },
-  {
-    "slug": "color-picker",
-    "name": "Color Picker",
-    "desc": "Pick color from image"
-  },
-  {
-    "slug": "audio-player",
-    "name": "Audio Player",
-    "desc": "Preview audio files"
-  },
-  {
-    "slug": "audio-info",
-    "name": "Audio Metadata",
-    "desc": "See audio info"
-  },
-  {
-    "slug": "tone-generator",
-    "name": "Tone Generator",
-    "desc": "Generate tone"
-  },
-  {
-    "slug": "video-info",
-    "name": "Video Metadata",
-    "desc": "View video details"
-  },
-  {
-    "slug": "video-thumbnail",
-    "name": "Video Thumbnail",
-    "desc": "Capture frame from video"
-  },
-  {
-    "slug": "random-number",
-    "name": "Random Number Generator",
-    "desc": "Generate random numbers"
-  },
-  {
-    "slug": "slug-generator",
-    "name": "Slug Generator",
-    "desc": "Generate SEO slugs"
-  },
-  {
-    "slug": "remove-spaces",
-    "name": "Remove Extra Spaces",
-    "desc": "Clean text spacing"
+    "category": "Text",
+    "desc": "Count words, characters, sentences, and paragraphs."
   },
   {
     "slug": "case-converter",
     "name": "Case Converter",
-    "desc": "Convert text case"
+    "category": "Text",
+    "desc": "Convert text to uppercase, lowercase, title case, and sentence case."
+  },
+  {
+    "slug": "remove-extra-spaces",
+    "name": "Remove Extra Spaces",
+    "category": "Text",
+    "desc": "Clean repeated spaces and blank lines from text."
+  },
+  {
+    "slug": "slug-generator",
+    "name": "Slug Generator",
+    "category": "Text",
+    "desc": "Create clean SEO-friendly slugs from titles and headings."
+  },
+  {
+    "slug": "password-generator",
+    "name": "Password Generator",
+    "category": "Generators",
+    "desc": "Generate strong secure passwords with copy and download."
+  },
+  {
+    "slug": "qr-code-generator",
+    "name": "QR Code Generator",
+    "category": "Generators",
+    "desc": "Turn text or URLs into QR codes."
+  },
+  {
+    "slug": "random-number-generator",
+    "name": "Random Number Generator",
+    "category": "Generators",
+    "desc": "Generate random integers in any range."
+  },
+  {
+    "slug": "meta-tag-generator",
+    "name": "Meta Tag Generator",
+    "category": "SEO",
+    "desc": "Generate basic SEO meta tags for websites."
+  },
+  {
+    "slug": "keyword-density-checker",
+    "name": "Keyword Density Checker",
+    "category": "SEO",
+    "desc": "Analyze repeated keywords in a text."
+  },
+  {
+    "slug": "json-formatter",
+    "name": "JSON Formatter",
+    "category": "Developer",
+    "desc": "Beautify, minify, and validate JSON."
+  },
+  {
+    "slug": "base64-encoder-decoder",
+    "name": "Base64 Encoder Decoder",
+    "category": "Developer",
+    "desc": "Encode and decode Base64 text."
+  },
+  {
+    "slug": "url-encoder-decoder",
+    "name": "URL Encoder Decoder",
+    "category": "Developer",
+    "desc": "Encode and decode URLs quickly."
+  },
+  {
+    "slug": "age-calculator",
+    "name": "Age Calculator",
+    "category": "Calculators",
+    "desc": "Calculate age from date of birth."
+  },
+  {
+    "slug": "bmi-calculator",
+    "name": "BMI Calculator",
+    "category": "Calculators",
+    "desc": "Calculate body mass index from weight and height."
+  },
+  {
+    "slug": "percentage-calculator",
+    "name": "Percentage Calculator",
+    "category": "Calculators",
+    "desc": "Solve common percentage problems."
+  },
+  {
+    "slug": "discount-calculator",
+    "name": "Discount Calculator",
+    "category": "Calculators",
+    "desc": "Calculate discount amount and final price."
+  },
+  {
+    "slug": "loan-calculator",
+    "name": "Loan Calculator",
+    "category": "Calculators",
+    "desc": "Estimate monthly loan repayments."
+  },
+  {
+    "slug": "image-to-base64",
+    "name": "Image to Base64",
+    "category": "Images",
+    "desc": "Convert uploaded image to Base64 data URL."
+  },
+  {
+    "slug": "image-resizer",
+    "name": "Image Resizer",
+    "category": "Images",
+    "desc": "Resize image in-browser and download the result."
+  },
+  {
+    "slug": "image-compressor",
+    "name": "Image Compressor",
+    "category": "Images",
+    "desc": "Compress image by exporting JPG with quality control."
+  },
+  {
+    "slug": "image-cropper",
+    "name": "Image Cropper",
+    "category": "Images",
+    "desc": "Create a simple center crop and download it."
+  },
+  {
+    "slug": "color-picker-from-image",
+    "name": "Color Picker From Image",
+    "category": "Images",
+    "desc": "Click an uploaded image to pick colors."
+  },
+  {
+    "slug": "audio-player",
+    "name": "Audio Player",
+    "category": "Audio",
+    "desc": "Preview uploaded audio files in-browser."
+  },
+  {
+    "slug": "audio-metadata-viewer",
+    "name": "Audio Metadata Viewer",
+    "category": "Audio",
+    "desc": "See audio duration, size, and type."
+  },
+  {
+    "slug": "tone-generator",
+    "name": "Tone Generator",
+    "category": "Audio",
+    "desc": "Generate a sine tone and download WAV."
+  },
+  {
+    "slug": "video-metadata-viewer",
+    "name": "Video Metadata Viewer",
+    "category": "Video",
+    "desc": "View video duration, size, and resolution."
+  },
+  {
+    "slug": "video-thumbnail-capture",
+    "name": "Video Thumbnail Capture",
+    "category": "Video",
+    "desc": "Capture a frame from uploaded video."
   }
 ]

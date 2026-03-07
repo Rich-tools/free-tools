@@ -1,21 +1,42 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Image Resizer</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Image Resizer | SmartTools</title>
+<meta name="description" content="Resize image in-browser and download the result.">
 <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-<div class="container">
-<div class="toolbox">
-<h2>Image Resizer</h2>
-<p>Resize images</p>
-<input placeholder="Input here">
-<button onclick="alert('Tool running')">Run Tool</button>
-<div class="result">Result area</div>
-<br><a href="../index.html">Back</a>
+<div class="section">
+  <div class="toolbox">
+    <h1>Image Resizer</h1>
+    <p class="desc">Resize image in-browser and download the result.</p>
+    <input class="input" id="file" type="file" accept="image/*">
+<div class="row">
+  <input class="input" id="width" type="number" placeholder="Width in px">
+  <input class="input" id="height" type="number" placeholder="Height in px (optional)">
 </div>
+<div class="toolbar">
+  <button class="tool-btn" onclick="resizeImage()">Resize</button>
+  <button class="tool-btn secondary" onclick="downloadCanvas(byId('canvas'),'resized-image.png')">Download PNG</button>
 </div>
+<canvas id="canvas"></canvas>
+    <a class="back-link" href="../index.html">← Back to SmartTools</a>
+  </div>
+</div>
+<script src="../js/helpers.js"></script>
+<script>
+let srcImg;
+byId('file').addEventListener('change', e=>{ const file=e.target.files[0]; if(!file) return; srcImg=new Image(); srcImg.src=URL.createObjectURL(file); });
+function resizeImage(){
+  if(!srcImg){ alert('Upload image first'); return; }
+  let w=parseInt(byId('width').value||'0'), h=parseInt(byId('height').value||'0');
+  if(!w && !h){ w=srcImg.width; h=srcImg.height; }
+  if(w && !h) h=Math.round(srcImg.height*(w/srcImg.width));
+  if(h && !w) w=Math.round(srcImg.width*(h/srcImg.height));
+  const c=byId('canvas'); c.width=w; c.height=h; c.getContext('2d').drawImage(srcImg,0,0,w,h);
+}
+</script>
 </body>
 </html>

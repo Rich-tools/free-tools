@@ -1,21 +1,36 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Loan Calculator</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Loan Calculator | SmartTools</title>
+<meta name="description" content="Estimate monthly loan repayments.">
 <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-<div class="container">
-<div class="toolbox">
-<h2>Loan Calculator</h2>
-<p>Estimate loan payments</p>
-<input placeholder="Input here">
-<button onclick="alert('Tool running')">Run Tool</button>
-<div class="result">Result area</div>
-<br><a href="../index.html">Back</a>
+<div class="section">
+  <div class="toolbox">
+    <h1>Loan Calculator</h1>
+    <p class="desc">Estimate monthly loan repayments.</p>
+    <div class="row">
+  <input class="input" id="amount" type="number" placeholder="Loan amount">
+  <input class="input" id="rate" type="number" placeholder="Annual interest %">
 </div>
+<input class="input" id="months" type="number" placeholder="Repayment period in months">
+<div class="toolbar"><button class="tool-btn" onclick="calc()">Calculate</button></div>
+<div id="result" class="result"></div>
+    <a class="back-link" href="../index.html">← Back to SmartTools</a>
+  </div>
 </div>
+<script src="../js/helpers.js"></script>
+<script>
+function calc(){
+  const P=parseFloat(byId('amount').value), annual=parseFloat(byId('rate').value), n=parseInt(byId('months').value);
+  if(!P||!isFinite(annual)||!n){ byId('result').innerText='Enter valid values'; return; }
+  const r=annual/100/12;
+  const m=r===0?P/n:(P*r*Math.pow(1+r,n))/(Math.pow(1+r,n)-1);
+  byId('result').innerText = `Estimated monthly payment: ${m.toFixed(2)}`;
+}
+</script>
 </body>
 </html>

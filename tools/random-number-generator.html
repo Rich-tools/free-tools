@@ -1,44 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Random Number Generator | Free Tools Hub</title>
-  <meta name="description" content="Generate a random whole number within a range." />
-  <link rel="stylesheet" href="../css/style.css" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Random Number Generator | SmartTools</title>
+<meta name="description" content="Generate random integers in any range.">
+<link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-  <main class="container tool-page">
-    <a class="back-link" href="../index.html">&larr; Back to home</a>
-    <div class="tool-wrap" style="margin-top:18px;">
-      <section class="editor">
-        <h1>Random Number Generator</h1>
-        <p class="note">Generate a random whole number within a range.</p>
-        
-<div class="row">
-  <div><label for="min">Minimum</label><input id="min" type="number" value="1" /></div>
-  <div><label for="max">Maximum</label><input id="max" type="number" value="100" /></div>
+<div class="section">
+  <div class="toolbox">
+    <h1>Random Number Generator</h1>
+    <p class="desc">Generate random integers in any range.</p>
+    <div class="row">
+  <input class="input" id="min" type="number" value="1" placeholder="Minimum">
+  <input class="input" id="max" type="number" value="100" placeholder="Maximum">
 </div>
-<div class="actions"><button id="randBtn">Generate number</button></div>
-<div class="output" id="randOutput"></div>
-
-      </section>
-      <aside class="panel">
-        <h2>About this tool</h2>
-        <p>Generate a random whole number within a range.</p>
-        <p class="small">Tip: expand each tool page with FAQs and extra examples later for better Google ranking.</p>
-      </aside>
-    </div>
-  </main>
-  <script src="../js/tracking.js"></script>
-  <script>
-document.getElementById('randBtn').onclick=function(){
- let min=parseInt(document.getElementById('min').value,10); let max=parseInt(document.getElementById('max').value,10);
- if(isNaN(min)||isNaN(max)||min>max){document.getElementById('randOutput').textContent='Enter a valid range.';return;}
- const n=Math.floor(Math.random()*(max-min+1))+min;
- document.getElementById('randOutput').textContent='Random number: '+n;
- trackAction('Random number generated');
-};
+<div class="toolbar"><button class="tool-btn" onclick="run()">Generate</button></div>
+<div id="result" class="result"></div>
+    <a class="back-link" href="../index.html">← Back to SmartTools</a>
+  </div>
+</div>
+<script src="../js/helpers.js"></script>
+<script>
+function run(){
+  let min = parseInt(byId('min').value || '1');
+  let max = parseInt(byId('max').value || '100');
+  if(max < min){ const t=min; min=max; max=t; }
+  byId('result').innerText = String(Math.floor(Math.random()*(max-min+1))+min);
+}
+run();
 </script>
 </body>
 </html>

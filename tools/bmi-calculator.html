@@ -1,21 +1,34 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>BMI Calculator</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BMI Calculator | SmartTools</title>
+<meta name="description" content="Calculate body mass index from weight and height.">
 <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-<div class="container">
-<div class="toolbox">
-<h2>BMI Calculator</h2>
-<p>Body mass index tool</p>
-<input placeholder="Input here">
-<button onclick="alert('Tool running')">Run Tool</button>
-<div class="result">Result area</div>
-<br><a href="../index.html">Back</a>
+<div class="section">
+  <div class="toolbox">
+    <h1>BMI Calculator</h1>
+    <p class="desc">Calculate body mass index from weight and height.</p>
+    <div class="row">
+  <input class="input" id="weight" type="number" placeholder="Weight in kg">
+  <input class="input" id="height" type="number" placeholder="Height in cm">
 </div>
+<div class="toolbar"><button class="tool-btn" onclick="calcBMI()">Calculate</button></div>
+<div id="result" class="result"></div>
+    <a class="back-link" href="../index.html">← Back to SmartTools</a>
+  </div>
 </div>
+<script src="../js/helpers.js"></script>
+<script>
+function calcBMI(){
+  const w = parseFloat(byId('weight').value), h = parseFloat(byId('height').value)/100;
+  if(!w || !h){ byId('result').innerText='Enter valid values'; return; }
+  const bmi = w/(h*h); const label = bmi<18.5?'Underweight':bmi<25?'Normal':bmi<30?'Overweight':'Obese';
+  byId('result').innerText = `BMI: ${bmi.toFixed(2)} (${label})`;
+}
+</script>
 </body>
 </html>

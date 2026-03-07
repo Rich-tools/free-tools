@@ -1,21 +1,44 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Case Converter</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Case Converter | SmartTools</title>
+<meta name="description" content="Convert text to uppercase, lowercase, title case, and sentence case.">
 <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-<div class="container">
-<div class="toolbox">
-<h2>Case Converter</h2>
-<p>Convert text case</p>
-<input placeholder="Input here">
-<button onclick="alert('Tool running')">Run Tool</button>
-<div class="result">Result area</div>
-<br><a href="../index.html">Back</a>
+<div class="section">
+  <div class="toolbox">
+    <h1>Case Converter</h1>
+    <p class="desc">Convert text to uppercase, lowercase, title case, and sentence case.</p>
+    <textarea id="input" placeholder="Type text here..."></textarea>
+<div class="toolbar">
+  <button class="tool-btn" onclick="convert('upper')">UPPERCASE</button>
+  <button class="tool-btn secondary" onclick="convert('lower')">lowercase</button>
+  <button class="tool-btn secondary" onclick="convert('title')">Title Case</button>
+  <button class="tool-btn secondary" onclick="convert('sentence')">Sentence case</button>
 </div>
+<div id="result" class="result"></div>
+<div class="toolbar">
+  <button class="tool-btn secondary" onclick="copyText(byId('result').innerText)">Copy Result</button>
+  <button class="tool-btn secondary" onclick="downloadText('converted.txt', byId('result').innerText)">Download</button>
 </div>
+    <a class="back-link" href="../index.html">← Back to SmartTools</a>
+  </div>
+</div>
+<script src="../js/helpers.js"></script>
+<script>
+function titleCase(str){return str.toLowerCase().replace(/\b\w/g,m=>m.toUpperCase());}
+function sentenceCase(str){return str.toLowerCase().replace(/(^\s*[a-z])|([.!?]\s*[a-z])/g,m=>m.toUpperCase());}
+function convert(type){
+  let t = byId('input').value;
+  if(type==='upper') t=t.toUpperCase();
+  if(type==='lower') t=t.toLowerCase();
+  if(type==='title') t=titleCase(t);
+  if(type==='sentence') t=sentenceCase(t);
+  byId('result').innerText=t;
+}
+</script>
 </body>
 </html>

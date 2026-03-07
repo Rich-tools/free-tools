@@ -1,46 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Meta Tag Generator | Free Tools Hub</title>
-  <meta name="description" content="Generate basic HTML meta tags for a page." />
-  <link rel="stylesheet" href="../css/style.css" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meta Tag Generator | SmartTools</title>
+<meta name="description" content="Generate basic SEO meta tags for websites.">
+<link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-  <main class="container tool-page">
-    <a class="back-link" href="../index.html">&larr; Back to home</a>
-    <div class="tool-wrap" style="margin-top:18px;">
-      <section class="editor">
-        <h1>Meta Tag Generator</h1>
-        <p class="note">Generate basic HTML meta tags for a page.</p>
-        
-<label for="siteTitle">Page title</label><input id="siteTitle" type="text" placeholder="My Website Title" />
-<label for="siteDesc">Meta description</label><textarea id="siteDesc" placeholder="Write a short description..."></textarea>
-<label for="siteKeywords">Keywords</label><input id="siteKeywords" type="text" placeholder="keyword one, keyword two" />
-<div class="actions"><button id="metaBtn">Generate tags</button></div>
-<div class="output code" id="metaOutput"></div>
-
-      </section>
-      <aside class="panel">
-        <h2>About this tool</h2>
-        <p>Generate basic HTML meta tags for a page.</p>
-        <p class="small">Tip: expand each tool page with FAQs and extra examples later for better Google ranking.</p>
-      </aside>
-    </div>
-  </main>
-  <script src="../js/tracking.js"></script>
-  <script>
-document.getElementById('metaBtn').onclick=function(){
- const title=document.getElementById('siteTitle').value.trim();
- const desc=document.getElementById('siteDesc').value.trim();
- const keys=document.getElementById('siteKeywords').value.trim();
- const out=`<title>${title}</title>
-<meta name="description" content="${desc}">
-<meta name="keywords" content="${keys}">`;
- document.getElementById('metaOutput').textContent=out;
- trackAction('Meta tags generated');
-};
+<div class="section">
+  <div class="toolbox">
+    <h1>Meta Tag Generator</h1>
+    <p class="desc">Generate basic SEO meta tags for websites.</p>
+    <input class="input" id="title" placeholder="Page title">
+<input class="input" id="desc" placeholder="Meta description">
+<input class="input" id="keywords" placeholder="Keywords, comma separated">
+<div class="toolbar"><button class="tool-btn" onclick="buildTags()">Generate Tags</button></div>
+<pre id="result" class="result"></pre>
+<div class="toolbar">
+  <button class="tool-btn secondary" onclick="copyText(byId('result').innerText)">Copy</button>
+  <button class="tool-btn secondary" onclick="downloadText('meta-tags.txt', byId('result').innerText)">Download</button>
+</div>
+    <a class="back-link" href="../index.html">← Back to SmartTools</a>
+  </div>
+</div>
+<script src="../js/helpers.js"></script>
+<script>
+function buildTags(){
+  const t = byId('title').value.trim(), d = byId('desc').value.trim(), k = byId('keywords').value.trim();
+  byId('result').innerText = `<title>${t}</title>\n<meta name="description" content="${d}">\n<meta name="keywords" content="${k}">`;
+}
 </script>
 </body>
 </html>

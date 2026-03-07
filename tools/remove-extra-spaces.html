@@ -1,45 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Remove Extra Spaces | Free Tools Hub</title>
-  <meta name="description" content="Remove repeated spaces and empty lines from text." />
-  <link rel="stylesheet" href="../css/style.css" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Remove Extra Spaces | SmartTools</title>
+<meta name="description" content="Clean repeated spaces and blank lines from text.">
+<link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-  <main class="container tool-page">
-    <a class="back-link" href="../index.html">&larr; Back to home</a>
-    <div class="tool-wrap" style="margin-top:18px;">
-      <section class="editor">
-        <h1>Remove Extra Spaces</h1>
-        <p class="note">Remove repeated spaces and empty lines from text.</p>
-        
-<label for="spaceInput">Text</label>
-<textarea id="spaceInput" placeholder="Paste messy text here..."></textarea>
-<div class="actions">
-  <button id="cleanSpaces">Clean text</button>
+<div class="section">
+  <div class="toolbox">
+    <h1>Remove Extra Spaces</h1>
+    <p class="desc">Clean repeated spaces and blank lines from text.</p>
+    <textarea id="input" placeholder="Paste text with extra spaces..."></textarea>
+<div class="toolbar"><button class="tool-btn" onclick="clean()">Clean Text</button></div>
+<div id="result" class="result"></div>
+<div class="toolbar">
+  <button class="tool-btn secondary" onclick="copyText(byId('result').innerText)">Copy</button>
+  <button class="tool-btn secondary" onclick="downloadText('clean-text.txt', byId('result').innerText)">Download</button>
 </div>
-<div class="output" id="spaceOutput"></div>
-
-      </section>
-      <aside class="panel">
-        <h2>About this tool</h2>
-        <p>Remove repeated spaces and empty lines from text.</p>
-        <p class="small">Tip: expand each tool page with FAQs and extra examples later for better Google ranking.</p>
-      </aside>
-    </div>
-  </main>
-  <script src="../js/tracking.js"></script>
-  <script>
-document.getElementById('cleanSpaces').onclick=function(){
- const clean=document.getElementById('spaceInput').value.replace(/[ 	]+/g,' ').replace(/
-{3,}/g,'
-
-').trim();
- document.getElementById('spaceOutput').textContent=clean;
- trackAction('Spaces removed');
-};
+    <a class="back-link" href="../index.html">← Back to SmartTools</a>
+  </div>
+</div>
+<script src="../js/helpers.js"></script>
+<script>
+function clean(){
+  let t = byId('input').value.replace(/[ \t]+/g,' ').replace(/\n\s*\n+/g,'\n\n').trim();
+  byId('result').innerText=t;
+}
 </script>
 </body>
 </html>

@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://kidume105.github.io/free-tools/sitemap.xml

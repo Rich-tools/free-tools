@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Image to Base64 | SmartTools</title>
+<meta name="description" content="Convert uploaded image to Base64 data URL.">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<div class="section">
+  <div class="toolbox">
+    <h1>Image to Base64</h1>
+    <p class="desc">Convert uploaded image to Base64 data URL.</p>
+    <input class="input" id="file" type="file" accept="image/*">
+<img id="preview" class="preview" style="display:none">
+<div id="result" class="result"></div>
+<div class="toolbar"><button class="tool-btn secondary" onclick="copyText(byId('result').innerText)">Copy Base64</button></div>
+    <a class="back-link" href="../index.html">← Back to SmartTools</a>
+  </div>
+</div>
+<script src="../js/helpers.js"></script>
+<script>
+byId('file').addEventListener('change', async e=>{
+  const file=e.target.files[0]; if(!file) return;
+  const data=await readFileAsDataURL(file);
+  byId('preview').src=data; byId('preview').style.display='block';
+  byId('result').innerText=data;
+});
+</script>
+</body>
+</html>

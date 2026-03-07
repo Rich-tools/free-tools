@@ -1,21 +1,31 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>QR Code Generator</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>QR Code Generator | SmartTools</title>
+<meta name="description" content="Turn text or URLs into QR codes.">
 <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-<div class="container">
-<div class="toolbox">
-<h2>QR Code Generator</h2>
-<p>Create QR codes</p>
-<input placeholder="Input here">
-<button onclick="alert('Tool running')">Run Tool</button>
-<div class="result">Result area</div>
-<br><a href="../index.html">Back</a>
+<div class="section">
+  <div class="toolbox">
+    <h1>QR Code Generator</h1>
+    <p class="desc">Turn text or URLs into QR codes.</p>
+    <input class="input" id="input" placeholder="Enter text or URL">
+<div class="toolbar"><button class="tool-btn" onclick="makeQR()">Generate QR</button></div>
+<div id="wrap"></div>
+    <a class="back-link" href="../index.html">← Back to SmartTools</a>
+  </div>
 </div>
-</div>
+<script src="../js/helpers.js"></script>
+<script>
+function makeQR(){
+  const v = byId('input').value.trim();
+  if(!v){ byId('wrap').innerHTML=''; return; }
+  const url = 'https://api.qrserver.com/v1/create-qr-code/?size=260x260&data=' + encodeURIComponent(v);
+  byId('wrap').innerHTML = `<img class="preview" src="${url}" alt="QR"><div class="toolbar"><a class="tool-btn secondary" href="${url}" download="qr-code.png">Download QR</a></div>`;
+}
+</script>
 </body>
 </html>

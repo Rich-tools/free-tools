@@ -1,21 +1,34 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>JSON Formatter</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JSON Formatter | SmartTools</title>
+<meta name="description" content="Beautify, minify, and validate JSON.">
 <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-<div class="container">
-<div class="toolbox">
-<h2>JSON Formatter</h2>
-<p>Beautify JSON</p>
-<input placeholder="Input here">
-<button onclick="alert('Tool running')">Run Tool</button>
-<div class="result">Result area</div>
-<br><a href="../index.html">Back</a>
+<div class="section">
+  <div class="toolbox">
+    <h1>JSON Formatter</h1>
+    <p class="desc">Beautify, minify, and validate JSON.</p>
+    <textarea id="input" placeholder='Paste JSON here...'></textarea>
+<div class="toolbar">
+  <button class="tool-btn" onclick="formatJSON()">Beautify</button>
+  <button class="tool-btn secondary" onclick="minifyJSON()">Minify</button>
 </div>
+<pre id="result" class="result"></pre>
+<div class="toolbar">
+  <button class="tool-btn secondary" onclick="copyText(byId('result').innerText)">Copy</button>
+  <button class="tool-btn secondary" onclick="downloadText('json-output.json', byId('result').innerText, 'application/json')">Download</button>
 </div>
+    <a class="back-link" href="../index.html">← Back to SmartTools</a>
+  </div>
+</div>
+<script src="../js/helpers.js"></script>
+<script>
+function formatJSON(){ try{ byId('result').innerText = JSON.stringify(JSON.parse(byId('input').value), null, 2); }catch(e){ byId('result').innerText = 'Invalid JSON'; } }
+function minifyJSON(){ try{ byId('result').innerText = JSON.stringify(JSON.parse(byId('input').value)); }catch(e){ byId('result').innerText = 'Invalid JSON'; } }
+</script>
 </body>
 </html>

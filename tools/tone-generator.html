@@ -1,21 +1,56 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Tone Generator</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tone Generator | SmartTools</title>
+<meta name="description" content="Generate a sine tone and download WAV.">
 <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-<div class="container">
-<div class="toolbox">
-<h2>Tone Generator</h2>
-<p>Generate tone</p>
-<input placeholder="Input here">
-<button onclick="alert('Tool running')">Run Tool</button>
-<div class="result">Result area</div>
-<br><a href="../index.html">Back</a>
+<div class="section">
+  <div class="toolbox">
+    <h1>Tone Generator</h1>
+    <p class="desc">Generate a sine tone and download WAV.</p>
+    <div class="row">
+  <input class="input" id="freq" type="number" value="440" placeholder="Frequency in Hz">
+  <input class="input" id="dur" type="number" value="2" step="0.1" placeholder="Duration in seconds">
 </div>
+<div class="toolbar">
+  <button class="tool-btn" onclick="makeTone()">Generate Tone</button>
+  <button class="tool-btn secondary" id="downloadBtn" disabled>Download WAV</button>
 </div>
+<audio id="audio" controls style="width:100%;margin-top:14px"></audio>
+<div id="result" class="result"></div>
+    <a class="back-link" href="../index.html">← Back to SmartTools</a>
+  </div>
+</div>
+<script src="../js/helpers.js"></script>
+<script>
+function audioBufferToWav(buffer) {
+  const numOfChan=buffer.numberOfChannels, length=buffer.length*numOfChan*2+44;
+  const ab=new ArrayBuffer(length), view=new DataView(ab); let offset=0;
+  const write=s=>{ for(let i=0;i<s.length;i++) view.setUint8(offset++, s.charCodeAt(i)); };
+  write('RIFF'); view.setUint32(offset, 36 + buffer.length * numOfChan * 2, true); offset+=4;
+  write('WAVEfmt '); view.setUint32(offset, 16, true); offset+=4;
+  view.setUint16(offset,1,true); offset+=2; view.setUint16(offset,numOfChan,true); offset+=2;
+  view.setUint32(offset,buffer.sampleRate,true); offset+=4; view.setUint32(offset,buffer.sampleRate*2*numOfChan,true); offset+=4;
+  view.setUint16(offset,numOfChan*2,true); offset+=2; view.setUint16(offset,16,true); offset+=2;
+  write('data'); view.setUint32(offset,buffer.length*numOfChan*2,true); offset+=4;
+  const chans=[]; for(let i=0;i<numOfChan;i++) chans.push(buffer.getChannelData(i));
+  for(let i=0;i<buffer.length;i++){ for(let c=0;c<numOfChan;c++){ const s=Math.max(-1,Math.min(1,chans[c][i])); view.setInt16(offset, s<0?s*0x8000:s*0x7FFF, true); offset+=2; } }
+  return new Blob([view],{type:'audio/wav'});
+}
+let wavUrl='';
+async function makeTone(){
+  const freq=parseFloat(byId('freq').value||'440'), dur=parseFloat(byId('dur').value||'2');
+  const ctx=new (window.AudioContext||window.webkitAudioContext)();
+  const frames=Math.floor(ctx.sampleRate*dur), buf=ctx.createBuffer(1,frames,ctx.sampleRate), data=buf.getChannelData(0);
+  for(let i=0;i<frames;i++) data[i]=Math.sin(2*Math.PI*freq*i/ctx.sampleRate)*0.5;
+  const wav=audioBufferToWav(buf); wavUrl=URL.createObjectURL(wav);
+  byId('audio').src=wavUrl; byId('downloadBtn').disabled=false; byId('result').innerText=`Generated ${freq} Hz tone for ${dur} sec`;
+  byId('downloadBtn').onclick=()=>{ const a=document.createElement('a'); a.href=wavUrl; a.download='tone.wav'; a.click(); };
+}
+</script>
 </body>
 </html>

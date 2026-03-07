@@ -1,25 +1,72 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>SmartTools</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SmartTools | Professional Free Online Tools</title>
+<meta name="description" content="SmartTools offers fast free online tools for text, SEO, developer, image, audio, video and calculators. Search a tool and open it instantly.">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+<section class="hero">
+  <div class="wrap">
+    <nav class="nav">
+      <div class="brand"><div class="logo">S</div><span>SmartTools</span></div>
+      <div><a href="#tools">Tools</a><a href="#features">Features</a></div>
+    </nav>
+    <div class="hero-grid">
+      <div>
+        <span class="badge">Professional browser-based toolkit</span>
+        <h1>SmartTools for text, images, audio, video and everyday work.</h1>
+        <p>Clean design, fast tools, direct pages for every tool, and a search experience that helps people find what they need quickly.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="#tools">Explore Tools</a>
+          <a class="btn btn-ghost" href="#features">See Features</a>
+        </div>
+      </div>
+      <div class="panel">
+        <div class="metrics">
+          <div class="metric"><strong>27</strong><span>Tools included</span></div>
+          <div class="metric"><strong>7</strong><span>Main categories</span></div>
+          <div class="metric"><strong>Fast</strong><span>Runs in browser</span></div>
+          <div class="metric"><strong>SEO</strong><span>Each tool has its own page</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-<header>
-<h1>SmartTools</h1>
-<p>Professional Free Online Tools</p>
-</header>
+<section class="section" id="tools">
+  <div class="search-shell">
+    <input id="searchInput" class="search-box" placeholder="Search: image compressor, QR code, loan calculator, tone generator..." oninput="filterTools(document.querySelector('.tab.active')?.dataset.cat || 'All')">
+    <div class="tabs">
+      <span class="tab active" data-cat="All" onclick="filterTools('All')">All</span>
+      <span class="tab" data-cat="Text" onclick="filterTools('Text')">Text</span>
+      <span class="tab" data-cat="Generators" onclick="filterTools('Generators')">Generators</span>
+      <span class="tab" data-cat="SEO" onclick="filterTools('SEO')">SEO</span>
+      <span class="tab" data-cat="Developer" onclick="filterTools('Developer')">Developer</span>
+      <span class="tab" data-cat="Calculators" onclick="filterTools('Calculators')">Calculators</span>
+      <span class="tab" data-cat="Images" onclick="filterTools('Images')">Images</span>
+      <span class="tab" data-cat="Audio" onclick="filterTools('Audio')">Audio</span>
+      <span class="tab" data-cat="Video" onclick="filterTools('Video')">Video</span>
+    </div>
+  </div>
+  <div class="head">
+    <div><h2>Browse SmartTools</h2><p><span id="toolCount">0</span> tools ready to use.</p></div>
+  </div>
+  <div id="toolsGrid" class="grid"></div>
+</section>
 
-<div class="container">
-<input id="search" class="search" placeholder="Search tools..." onkeyup="searchTools()">
-<div id="tools" class="grid"></div>
-</div>
+<section class="section" id="features">
+  <div class="head"><div><h2>Why this rebuild is better</h2><p>Cleaner branding, stronger UX, and real client-side tool functionality.</p></div></div>
+  <div class="feature-grid">
+    <div class="feature"><div class="icon">⚡</div><h3>Fast UX</h3><p>Clear layout, better spacing, and quick actions like copy, clear, and download where needed.</p></div>
+    <div class="feature"><div class="icon">🔎</div><h3>Search-first flow</h3><p>Users can search directly on the homepage and jump into the exact tool page they need.</p></div>
+    <div class="feature"><div class="icon">📄</div><h3>SEO-ready structure</h3><p>Each tool has its own page title and description, which is better for search engines later.</p></div>
+  </div>
+</section>
 
-<footer>SmartTools © 2026</footer>
-
+<footer class="footer"><div class="footer-inner"><strong>SmartTools</strong><br>A professional static toolkit built for GitHub Pages.</div></footer>
 <script src="js/main.js"></script>
 </body>
 </html>

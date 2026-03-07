@@ -1,21 +1,42 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Word Counter</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Word Counter | SmartTools</title>
+<meta name="description" content="Count words, characters, sentences, and paragraphs instantly.">
 <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-<div class="container">
-<div class="toolbox">
-<h2>Word Counter</h2>
-<p>Count words and characters</p>
-<input placeholder="Input here">
-<button onclick="alert('Tool running')">Run Tool</button>
-<div class="result">Result area</div>
-<br><a href="../index.html">Back</a>
+<div class="section">
+  <div class="toolbox">
+    <h1>Word Counter</h1>
+    <p class="desc">Count words, characters, sentences, and paragraphs instantly.</p>
+    <textarea id="input" placeholder="Paste or type text here..."></textarea>
+<div class="toolbar">
+  <button class="tool-btn" onclick="analyze()">Analyze</button>
+  <button class="tool-btn secondary" onclick="copyText(byId('input').value)">Copy Input</button>
+  <button class="tool-btn secondary" onclick="downloadText('text.txt', byId('input').value)">Download Input</button>
 </div>
+<div class="stats">
+  <div class="stat"><strong id="words">0</strong><span class="small">Words</span></div>
+  <div class="stat"><strong id="chars">0</strong><span class="small">Characters</span></div>
+  <div class="stat"><strong id="sentences">0</strong><span class="small">Sentences</span></div>
+  <div class="stat"><strong id="paragraphs">0</strong><span class="small">Paragraphs</span></div>
 </div>
+    <a class="back-link" href="../index.html">← Back to SmartTools</a>
+  </div>
+</div>
+<script src="../js/helpers.js"></script>
+<script>
+function analyze(){
+  const text = byId('input').value;
+  byId('words').textContent = text.trim() ? text.trim().split(/\s+/).length : 0;
+  byId('chars').textContent = text.length;
+  byId('sentences').textContent = text.split(/[.!?]+/).filter(v=>v.trim()).length;
+  byId('paragraphs').textContent = text.split(/\n+/).filter(v=>v.trim()).length;
+}
+byId('input').addEventListener('input', analyze);
+</script>
 </body>
 </html>

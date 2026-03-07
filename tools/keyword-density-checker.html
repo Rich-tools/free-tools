@@ -1,48 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Keyword Density Checker | Free Tools Hub</title>
-  <meta name="description" content="Check keyword count and estimated density in your text." />
-  <link rel="stylesheet" href="../css/style.css" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Keyword Density Checker | SmartTools</title>
+<meta name="description" content="Analyze repeated keywords in a text.">
+<link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-  <main class="container tool-page">
-    <a class="back-link" href="../index.html">&larr; Back to home</a>
-    <div class="tool-wrap" style="margin-top:18px;">
-      <section class="editor">
-        <h1>Keyword Density Checker</h1>
-        <p class="note">Check keyword count and estimated density in your text.</p>
-        
-<label for="densityText">Text</label>
-<textarea id="densityText" placeholder="Paste article text here..."></textarea>
-<label for="keyword">Keyword</label>
-<input id="keyword" type="text" placeholder="example keyword" />
-<div class="actions"><button id="densityBtn">Check density</button></div>
-<div class="output" id="densityOutput"></div>
-
-      </section>
-      <aside class="panel">
-        <h2>About this tool</h2>
-        <p>Check keyword count and estimated density in your text.</p>
-        <p class="small">Tip: expand each tool page with FAQs and extra examples later for better Google ranking.</p>
-      </aside>
-    </div>
-  </main>
-  <script src="../js/tracking.js"></script>
-  <script>
-document.getElementById('densityBtn').onclick=function(){
- const text=document.getElementById('densityText').value.toLowerCase();
- const keyword=document.getElementById('keyword').value.toLowerCase().trim();
- if(!text||!keyword){document.getElementById('densityOutput').textContent='Enter both text and keyword.';return;}
- const words=text.split(/\s+/).filter(Boolean);
- const regex=new RegExp(keyword.replace(/[.*+?^${}()|[\]\]/g,'\$&'),'g');
- const matches=(text.match(regex)||[]).length;
- const density=((matches/Math.max(words.length,1))*100).toFixed(2);
- document.getElementById('densityOutput').textContent=`Keyword appears ${matches} times. Estimated density: ${density}%`;
- trackAction('Keyword density checked');
-};
+<div class="section">
+  <div class="toolbox">
+    <h1>Keyword Density Checker</h1>
+    <p class="desc">Analyze repeated keywords in a text.</p>
+    <textarea id="input" placeholder="Paste article or paragraph..."></textarea>
+<div class="toolbar"><button class="tool-btn" onclick="analyzeDensity()">Check Density</button></div>
+<pre id="result" class="result"></pre>
+    <a class="back-link" href="../index.html">← Back to SmartTools</a>
+  </div>
+</div>
+<script src="../js/helpers.js"></script>
+<script>
+function analyzeDensity(){
+  const txt = byId('input').value.toLowerCase().replace(/[^a-z0-9\s]/g,' ');
+  const words = txt.split(/\s+/).filter(w=>w.length>2); const total = words.length || 1;
+  const count = {}; words.forEach(w=>count[w]=(count[w]||0)+1);
+  const top = Object.entries(count).sort((a,b)=>b[1]-a[1]).slice(0,15).map(([w,c])=>`${w}: ${c} (${((c/total)*100).toFixed(2)}%)`).join('\n');
+  byId('result').innerText = top || 'No keywords found';
+}
 </script>
 </body>
 </html>

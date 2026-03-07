@@ -1,40 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>URL Encoder / Decoder | Free Tools Hub</title>
-  <meta name="description" content="Encode or decode strings for safe URL usage." />
-  <link rel="stylesheet" href="../css/style.css" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>URL Encoder Decoder | SmartTools</title>
+<meta name="description" content="Encode and decode URLs quickly.">
+<link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-  <main class="container tool-page">
-    <a class="back-link" href="../index.html">&larr; Back to home</a>
-    <div class="tool-wrap" style="margin-top:18px;">
-      <section class="editor">
-        <h1>URL Encoder / Decoder</h1>
-        <p class="note">Encode or decode strings for safe URL usage.</p>
-        
-<label for="urlInput">Input</label>
-<textarea id="urlInput" placeholder="Enter text or encoded URL..."></textarea>
-<div class="actions">
-  <button id="encBtn">Encode URL</button>
-  <button id="decBtn">Decode URL</button>
+<div class="section">
+  <div class="toolbox">
+    <h1>URL Encoder Decoder</h1>
+    <p class="desc">Encode and decode URLs quickly.</p>
+    <textarea id="input" placeholder="Paste text or URL..."></textarea>
+<div class="toolbar">
+  <button class="tool-btn" onclick="enc()">Encode</button>
+  <button class="tool-btn secondary" onclick="dec()">Decode</button>
 </div>
-<div class="output" id="urlOutput"></div>
-
-      </section>
-      <aside class="panel">
-        <h2>About this tool</h2>
-        <p>Encode or decode strings for safe URL usage.</p>
-        <p class="small">Tip: expand each tool page with FAQs and extra examples later for better Google ranking.</p>
-      </aside>
-    </div>
-  </main>
-  <script src="../js/tracking.js"></script>
-  <script>
-document.getElementById('encBtn').onclick=function(){document.getElementById('urlOutput').textContent=encodeURIComponent(document.getElementById('urlInput').value);trackAction('URL encoded');};
-document.getElementById('decBtn').onclick=function(){try{document.getElementById('urlOutput').textContent=decodeURIComponent(document.getElementById('urlInput').value);trackAction('URL decoded');}catch(e){document.getElementById('urlOutput').textContent='Invalid encoded text.';}};
+<div id="result" class="result"></div>
+    <a class="back-link" href="../index.html">← Back to SmartTools</a>
+  </div>
+</div>
+<script src="../js/helpers.js"></script>
+<script>
+function enc(){ byId('result').innerText = encodeURIComponent(byId('input').value); }
+function dec(){ try{ byId('result').innerText = decodeURIComponent(byId('input').value); }catch(e){ byId('result').innerText='Invalid encoded URL'; } }
 </script>
 </body>
 </html>

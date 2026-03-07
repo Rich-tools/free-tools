@@ -1,21 +1,34 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Discount Calculator</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Discount Calculator | SmartTools</title>
+<meta name="description" content="Calculate discount amount and final price.">
 <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-<div class="container">
-<div class="toolbox">
-<h2>Discount Calculator</h2>
-<p>Sale discount calculator</p>
-<input placeholder="Input here">
-<button onclick="alert('Tool running')">Run Tool</button>
-<div class="result">Result area</div>
-<br><a href="../index.html">Back</a>
+<div class="section">
+  <div class="toolbox">
+    <h1>Discount Calculator</h1>
+    <p class="desc">Calculate discount amount and final price.</p>
+    <div class="row">
+  <input class="input" id="price" type="number" placeholder="Original price">
+  <input class="input" id="discount" type="number" placeholder="Discount %">
 </div>
+<div class="toolbar"><button class="tool-btn" onclick="calc()">Calculate</button></div>
+<div id="result" class="result"></div>
+    <a class="back-link" href="../index.html">← Back to SmartTools</a>
+  </div>
 </div>
+<script src="../js/helpers.js"></script>
+<script>
+function calc(){
+  const p = parseFloat(byId('price').value), d = parseFloat(byId('discount').value);
+  if(!isFinite(p)||!isFinite(d)){ byId('result').innerText='Enter valid numbers'; return; }
+  const amt = p*d/100, fin = p-amt;
+  byId('result').innerText = `Discount: ${amt.toFixed(2)}\nFinal price: ${fin.toFixed(2)}`;
+}
+</script>
 </body>
 </html>
