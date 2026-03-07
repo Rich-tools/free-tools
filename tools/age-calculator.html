@@ -1,36 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Age Calculator | SmartTools</title>
-<meta name="description" content="Calculate age from date of birth.">
-<link rel="stylesheet" href="../css/style.css">
-</head>
-<body>
-<div class="section">
-  <div class="toolbox">
-    <h1>Age Calculator</h1>
-    <p class="desc">Calculate age from date of birth.</p>
-    <input class="input" id="dob" type="date">
-<div class="toolbar"><button class="tool-btn" onclick="calcAge()">Calculate</button></div>
-<div id="result" class="result"></div>
-    <a class="back-link" href="../index.html">← Back to SmartTools</a>
-  </div>
-</div>
-<script src="../js/helpers.js"></script>
-<script>
-function calcAge(){
-  const dob = new Date(byId('dob').value);
-  if(isNaN(dob)){ byId('result').innerText='Choose date of birth'; return; }
-  const now = new Date();
-  let years = now.getFullYear() - dob.getFullYear();
-  let months = now.getMonth() - dob.getMonth();
-  let days = now.getDate() - dob.getDate();
-  if(days < 0){ months--; days += new Date(now.getFullYear(), now.getMonth(), 0).getDate(); }
-  if(months < 0){ years--; months += 12; }
-  byId('result').innerText = `${years} years, ${months} months, ${days} days`;
-}
-</script>
-</body>
-</html>
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Age Calculator</title><link rel="stylesheet" href="../css/style.css"></head><body><div class="section"><div class="toolbox"><h1>Age Calculator</h1><p class="desc">Calculate age from date of birth.</p><input class="input" id="dob" type="date"><div class="toolbar"><button class="toolbtn" onclick="calcAge()">Calculate</button></div><div id="result" class="result"></div><a class="open" href="../index.html">Back to SmartTools</a></div></div><script src="../js/helpers.js"></script><script>
+function calcAge(){const dob=new Date(byId('dob').value);if(isNaN(dob)){byId('result').innerText='Choose date of birth';return;}const now=new Date();let years=now.getFullYear()-dob.getFullYear();let months=now.getMonth()-dob.getMonth();let days=now.getDate()-dob.getDate();if(days<0){months--;days+=new Date(now.getFullYear(),now.getMonth(),0).getDate();}if(months<0){years--;months+=12;}byId('result').innerText=`${years} years, ${months} months, ${days} days`;}
+</script></body></html>

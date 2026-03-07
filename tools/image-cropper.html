@@ -1,42 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Image Cropper | SmartTools</title>
-<meta name="description" content="Center-crop images quickly and save the result.">
-<link rel="stylesheet" href="../css/style.css">
-
-</head>
-<body>
-<div class="section">
-  <div class="toolbox">
-    <h1>Image Cropper</h1>
-    <p class="desc">Center-crop images quickly and save the result.</p>
-    
-<input class="input" id="file" type="file" accept="image/*">
-<div class="row">
-  <input class="input" id="cw" type="number" placeholder="Crop width">
-  <input class="input" id="ch" type="number" placeholder="Crop height">
-</div>
-<div class="toolbar"><button class="toolbtn" onclick="crop()">Crop</button><button class="toolbtn secondary" onclick="downloadCanvas(byId('canvas'),'cropped.png')">Download</button></div>
-<canvas id="canvas"></canvas>
-
-    <a class="back" href="../index.html">← Back to SmartTools</a>
-  </div>
-</div>
-<script src="../js/helpers.js"></script>
-
-<script>
-let im;
-byId('file').addEventListener('change', e=>{const f=e.target.files[0]; if(!f)return; im=new Image(); im.src=URL.createObjectURL(f);});
-function crop(){
- if(!im){alert('Upload image first'); return;}
- const cw=parseInt(byId('cw').value||Math.min(300,im.width));
- const ch=parseInt(byId('ch').value||Math.min(300,im.height));
- const sx=Math.max(0,Math.floor((im.width-cw)/2)), sy=Math.max(0,Math.floor((im.height-ch)/2));
- const c=byId('canvas'); c.width=cw; c.height=ch; c.getContext('2d').drawImage(im,sx,sy,cw,ch,0,0,cw,ch);
-}
-</script>
-</body>
-</html>
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Image Cropper</title><link rel="stylesheet" href="../css/style.css"></head><body><div class="section"><div class="toolbox"><h1>Image Cropper</h1><p class="desc">Center crop images and save the result.</p><input class="input" id="file" type="file" accept="image/*"><div class="row"><input class="input" id="cw" type="number" placeholder="Crop width"><input class="input" id="ch" type="number" placeholder="Crop height"></div><div class="toolbar"><button class="toolbtn" onclick="crop()">Crop</button><button class="toolbtn secondary" onclick="downloadCanvas(byId('canvas'),'cropped.png')">Download</button></div><canvas id="canvas"></canvas><a class="open" href="../index.html">Back to SmartTools</a></div></div><script src="../js/helpers.js"></script><script>
+let im;byId('file').addEventListener('change',e=>{const f=e.target.files[0];if(!f)return;im=new Image();im.src=URL.createObjectURL(f);});
+function crop(){if(!im){alert('Upload image first');return;}const cw=parseInt(byId('cw').value||Math.min(300,im.width));const ch=parseInt(byId('ch').value||Math.min(300,im.height));const sx=Math.max(0,Math.floor((im.width-cw)/2)), sy=Math.max(0,Math.floor((im.height-ch)/2));const c=byId('canvas');c.width=cw;c.height=ch;c.getContext('2d').drawImage(im,sx,sy,cw,ch,0,0,cw,ch);}
+</script></body></html>

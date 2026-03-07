@@ -2,127 +2,121 @@
   {
     "slug": "word-counter",
     "name": "Word Counter",
-    "category": "Text",
-    "icon": "\ud83d\udcdd",
-    "desc": "Count words, characters, sentences, and reading time."
+    "cat": "Text",
+    "icon": "\ud83d\udcdd"
   },
   {
     "slug": "case-converter",
     "name": "Case Converter",
-    "category": "Text",
-    "icon": "\ud83d\udd24",
-    "desc": "Convert text to upper, lower, title, and sentence case."
+    "cat": "Text",
+    "icon": "\ud83d\udd24"
+  },
+  {
+    "slug": "slug-generator",
+    "name": "Slug Generator",
+    "cat": "Text",
+    "icon": "\ud83d\udd17"
   },
   {
     "slug": "password-generator",
     "name": "Password Generator",
-    "category": "Utility",
-    "icon": "\ud83d\udd10",
-    "desc": "Generate strong passwords with copy and download."
+    "cat": "Utility",
+    "icon": "\ud83d\udd10"
   },
   {
     "slug": "qr-code-generator",
     "name": "QR Code Generator",
-    "category": "Utility",
-    "icon": "\ud83d\udcf1",
-    "desc": "Generate QR codes from links or text."
+    "cat": "Utility",
+    "icon": "\ud83d\udcf1"
   },
   {
     "slug": "json-formatter",
     "name": "JSON Formatter",
-    "category": "Developer",
-    "icon": "\ud83e\udde9",
-    "desc": "Beautify, minify, and validate JSON."
+    "cat": "Developer",
+    "icon": "\ud83e\udde9"
   },
   {
-    "slug": "image-compressor",
-    "name": "Image Compressor",
-    "category": "Image",
-    "icon": "\ud83d\uddbc\ufe0f",
-    "desc": "Compress images in your browser and download JPG."
+    "slug": "base64-tool",
+    "name": "Base64 Encoder / Decoder",
+    "cat": "Developer",
+    "icon": "\ud83e\uddec"
   },
   {
-    "slug": "image-resizer",
-    "name": "Image Resizer",
-    "category": "Image",
-    "icon": "\ud83d\udcd0",
-    "desc": "Resize images and download PNG output."
+    "slug": "url-encoder",
+    "name": "URL Encoder / Decoder",
+    "cat": "Developer",
+    "icon": "\ud83c\udf10"
   },
   {
-    "slug": "image-cropper",
-    "name": "Image Cropper",
-    "category": "Image",
-    "icon": "\u2702\ufe0f",
-    "desc": "Center-crop images quickly and save the result."
-  },
-  {
-    "slug": "color-picker-from-image",
-    "name": "Color Picker From Image",
-    "category": "Image",
-    "icon": "\ud83c\udfa8",
-    "desc": "Upload an image and click to pick HEX/RGB colors."
-  },
-  {
-    "slug": "youtube-thumbnail-downloader",
-    "name": "YouTube Thumbnail Downloader",
-    "category": "Media",
-    "icon": "\u25b6\ufe0f",
-    "desc": "Get video thumbnails from a YouTube URL."
-  },
-  {
-    "slug": "video-metadata-viewer",
-    "name": "Video Metadata Viewer",
-    "category": "Media",
-    "icon": "\ud83c\udfac",
-    "desc": "See duration, size, and resolution of a video."
-  },
-  {
-    "slug": "video-thumbnail-capture",
-    "name": "Video Thumbnail Capture",
-    "category": "Media",
-    "icon": "\ud83d\uddbc\ufe0f",
-    "desc": "Capture a frame from an uploaded video."
-  },
-  {
-    "slug": "pdf-page-counter",
-    "name": "PDF Page Counter",
-    "category": "PDF",
-    "icon": "\ud83d\udcc4",
-    "desc": "Upload a PDF and count the total pages."
-  },
-  {
-    "slug": "pdf-merge",
-    "name": "PDF Merge",
-    "category": "PDF",
-    "icon": "\ud83e\uddf7",
-    "desc": "Merge multiple PDF files into one."
-  },
-  {
-    "slug": "pdf-split",
-    "name": "PDF Split",
-    "category": "PDF",
-    "icon": "\ud83d\udcda",
-    "desc": "Extract selected PDF pages into a new file."
-  },
-  {
-    "slug": "docx-text-extractor",
-    "name": "DOCX Text Extractor",
-    "category": "Document",
-    "icon": "\ud83d\udcd8",
-    "desc": "Extract readable text from a DOCX file."
-  },
-  {
-    "slug": "invoice-generator",
-    "name": "Invoice Generator",
-    "category": "Business",
-    "icon": "\ud83e\uddfe",
-    "desc": "Generate a simple printable invoice."
+    "slug": "age-calculator",
+    "name": "Age Calculator",
+    "cat": "Calculator",
+    "icon": "\ud83c\udf82"
   },
   {
     "slug": "loan-calculator",
     "name": "Loan Calculator",
-    "category": "Calculator",
-    "icon": "\ud83d\udcb3",
-    "desc": "Estimate monthly repayments."
+    "cat": "Calculator",
+    "icon": "\ud83d\udcb3"
+  },
+  {
+    "slug": "image-compressor",
+    "name": "Image Compressor",
+    "cat": "Image",
+    "icon": "\ud83d\uddbc\ufe0f"
+  },
+  {
+    "slug": "image-resizer",
+    "name": "Image Resizer",
+    "cat": "Image",
+    "icon": "\ud83d\udcd0"
+  },
+  {
+    "slug": "image-cropper",
+    "name": "Image Cropper",
+    "cat": "Image",
+    "icon": "\u2702\ufe0f"
+  },
+  {
+    "slug": "color-picker",
+    "name": "Color Picker From Image",
+    "cat": "Image",
+    "icon": "\ud83c\udfa8"
+  },
+  {
+    "slug": "youtube-thumbnail",
+    "name": "YouTube Thumbnail Downloader",
+    "cat": "Media",
+    "icon": "\u25b6\ufe0f"
+  },
+  {
+    "slug": "pdf-merge",
+    "name": "Merge PDF",
+    "cat": "PDF",
+    "icon": "\ud83d\udcc4"
+  },
+  {
+    "slug": "pdf-split",
+    "name": "Split PDF",
+    "cat": "PDF",
+    "icon": "\ud83d\udcda"
+  },
+  {
+    "slug": "pdf-page-counter",
+    "name": "PDF Page Counter",
+    "cat": "PDF",
+    "icon": "\ud83d\udd22"
+  },
+  {
+    "slug": "docx-text-extractor",
+    "name": "DOCX Text Extractor",
+    "cat": "Document",
+    "icon": "\ud83d\udcd8"
+  },
+  {
+    "slug": "invoice-generator",
+    "name": "Invoice Generator",
+    "cat": "Business",
+    "icon": "\ud83e\uddfe"
   }
 ]

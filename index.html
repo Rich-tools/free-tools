@@ -1,43 +1,6 @@
-
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>SmartTools</title>
-<link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-<header>
-<h1>SmartTools</h1>
-<p>All the tools you need to work with files online</p>
-</header>
-
-<div class="container">
-
-<h2 class="section-title">PDF Tools</h2>
-<div class="grid">
-<div class="card"><h3>Merge PDF</h3><a class="open" href="tools/pdf/merge.html">Open</a></div>
-<div class="card"><h3>Split PDF</h3><a class="open" href="tools/pdf/split.html">Open</a></div>
-</div>
-
-<h2 class="section-title">Image Tools</h2>
-<div class="grid">
-<div class="card"><h3>Image Compressor</h3><a class="open" href="tools/image/compress.html">Open</a></div>
-<div class="card"><h3>Image Resizer</h3><a class="open" href="tools/image/resize.html">Open</a></div>
-</div>
-
-<h2 class="section-title">Text Tools</h2>
-<div class="grid">
-<div class="card"><h3>Word Counter</h3><a class="open" href="tools/text/word-counter.html">Open</a></div>
-<div class="card"><h3>Password Generator</h3><a class="open" href="tools/text/password.html">Open</a></div>
-</div>
-
-</div>
-
-<footer>
-<a href="pages/about.html">About</a> |
-<a href="pages/contact.html">Contact</a>
-</footer>
-
-</body>
-</html>
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>SmartTools</title><link rel="stylesheet" href="css/style.css"></head><body>
+<section class="hero"><div class="wrap"><div class="nav"><div class="brand"><div class="logo">S</div><span>SmartTools</span></div><div>Tools · Features</div></div><div class="hero-grid"><div><span class="badge">Corrected serious build</span><h1>Useful browser tools that actually do something.</h1><p>This build fixes the earlier weak versions. It has a better homepage, cleaner tool pages, and several tools with real actions like merge, split, extract, generate, compress and download.</p></div><div><div class="note">20 tool pages included. Stronger categories: PDF, Image, Document, Text, Utility and Business.</div></div></div></div></section>
+<div class="search-shell"><input id="searchInput" class="search" placeholder="Search tools like merge pdf, image compressor, qr code, docx extractor..." oninput="applyFilters(document.querySelector('.tab.active')?.dataset.cat || 'All')"><div class="tabs"><span class="tab active" data-cat="All" onclick="applyFilters('All')">All</span><span class="tab" data-cat="Text" onclick="applyFilters('Text')">Text</span><span class="tab" data-cat="Utility" onclick="applyFilters('Utility')">Utility</span><span class="tab" data-cat="Developer" onclick="applyFilters('Developer')">Developer</span><span class="tab" data-cat="Calculator" onclick="applyFilters('Calculator')">Calculator</span><span class="tab" data-cat="Image" onclick="applyFilters('Image')">Image</span><span class="tab" data-cat="Media" onclick="applyFilters('Media')">Media</span><span class="tab" data-cat="PDF" onclick="applyFilters('PDF')">PDF</span><span class="tab" data-cat="Document" onclick="applyFilters('Document')">Document</span><span class="tab" data-cat="Business" onclick="applyFilters('Business')">Business</span></div></div>
+<section class="section"><div class="head"><div><h2>Browse SmartTools</h2><p><span id="count">0</span> tools in this build.</p></div></div><div id="toolsGrid" class="grid"></div></section>
+<footer class="footer"><div class="footer-inner"><strong>SmartTools</strong><br>Built as a real browser-based tools site.</div></footer>
+<script src="js/main.js"></script></body></html>

@@ -1,35 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>JSON Formatter | SmartTools</title>
-<meta name="description" content="Beautify, minify, and validate JSON.">
-<link rel="stylesheet" href="../css/style.css">
-
-</head>
-<body>
-<div class="section">
-  <div class="toolbox">
-    <h1>JSON Formatter</h1>
-    <p class="desc">Beautify, minify, and validate JSON.</p>
-    
-<textarea id="input" placeholder='Paste JSON here...'></textarea>
-<div class="toolbar">
-  <button class="toolbtn" onclick="beautify()">Beautify</button>
-  <button class="toolbtn secondary" onclick="minify()">Minify</button>
-  <button class="toolbtn secondary" onclick="copyText(byId('result').innerText)">Copy</button>
-</div>
-<pre id="result" class="result"></pre>
-
-    <a class="back" href="../index.html">← Back to SmartTools</a>
-  </div>
-</div>
-<script src="../js/helpers.js"></script>
-
-<script>
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>JSON Formatter</title><link rel="stylesheet" href="../css/style.css"></head><body><div class="section"><div class="toolbox"><h1>JSON Formatter</h1><p class="desc">Beautify and validate JSON.</p><textarea id="input"></textarea><div class="toolbar"><button class="toolbtn" onclick="beautify()">Beautify</button><button class="toolbtn secondary" onclick="minify()">Minify</button></div><pre id="result" class="result"></pre><a class="open" href="../index.html">Back to SmartTools</a></div></div><script src="../js/helpers.js"></script><script>
 function beautify(){try{byId('result').innerText=JSON.stringify(JSON.parse(byId('input').value),null,2);}catch(e){byId('result').innerText='Invalid JSON';}}
 function minify(){try{byId('result').innerText=JSON.stringify(JSON.parse(byId('input').value));}catch(e){byId('result').innerText='Invalid JSON';}}
-</script>
-</body>
-</html>
+</script></body></html>

@@ -1,31 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Slug Generator | SmartTools</title>
-<meta name="description" content="Create clean SEO-friendly slugs from titles and headings.">
-<link rel="stylesheet" href="../css/style.css">
-</head>
-<body>
-<div class="section">
-  <div class="toolbox">
-    <h1>Slug Generator</h1>
-    <p class="desc">Create clean SEO-friendly slugs from titles and headings.</p>
-    <input class="input" id="input" placeholder="Enter page title or blog heading">
-<div class="toolbar"><button class="tool-btn" onclick="makeSlug()">Generate Slug</button></div>
-<div id="result" class="result"></div>
-<div class="toolbar"><button class="tool-btn secondary" onclick="copyText(byId('result').innerText)">Copy Slug</button></div>
-    <a class="back-link" href="../index.html">← Back to SmartTools</a>
-  </div>
-</div>
-<script src="../js/helpers.js"></script>
-<script>
-function makeSlug(){
-  const s = byId('input').value.toLowerCase().trim().replace(/[^a-z0-9\s-]/g,'').replace(/\s+/g,'-').replace(/-+/g,'-');
-  byId('result').innerText=s;
-}
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Slug Generator</title><link rel="stylesheet" href="../css/style.css"></head><body><div class="section"><div class="toolbox"><h1>Slug Generator</h1><p class="desc">Create SEO-friendly slugs from titles.</p><input class="input" id="input" placeholder="Enter page title"><div class="toolbar"><button class="toolbtn" onclick="makeSlug()">Generate Slug</button><button class="toolbtn secondary" onclick="copyText(byId('result').innerText)">Copy</button></div><div id="result" class="result"></div><a class="open" href="../index.html">Back to SmartTools</a></div></div><script src="../js/helpers.js"></script><script>
+function makeSlug(){const s=byId('input').value.toLowerCase().trim().replace(/[^a-z0-9\s-]/g,'').replace(/\s+/g,'-').replace(/-+/g,'-');byId('result').innerText=s;}
 byId('input').addEventListener('input', makeSlug);
-</script>
-</body>
-</html>
+</script></body></html>

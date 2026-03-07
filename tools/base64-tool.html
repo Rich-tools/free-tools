@@ -1,0 +1,4 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Base64 Encoder / Decoder</title><link rel="stylesheet" href="../css/style.css"></head><body><div class="section"><div class="toolbox"><h1>Base64 Encoder / Decoder</h1><p class="desc">Encode and decode Base64 text easily.</p><textarea id="input"></textarea><div class="toolbar"><button class="toolbtn" onclick="enc()">Encode</button><button class="toolbtn secondary" onclick="dec()">Decode</button></div><div id="result" class="result"></div><a class="open" href="../index.html">Back to SmartTools</a></div></div><script src="../js/helpers.js"></script><script>
+function enc(){byId('result').innerText=btoa(unescape(encodeURIComponent(byId('input').value)));}
+function dec(){try{byId('result').innerText=decodeURIComponent(escape(atob(byId('input').value)));}catch(e){byId('result').innerText='Invalid Base64';}}
+</script></body></html>

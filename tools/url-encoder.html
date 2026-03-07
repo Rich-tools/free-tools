@@ -1,21 +1,4 @@
-
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>URL Encoder</title>
-<link rel="stylesheet" href="../css/style.css">
-</head>
-<body>
-<div class="container">
-<div class="toolbox">
-<h2>URL Encoder</h2>
-<p>Encode URLs</p>
-<input placeholder="Input here">
-<button onclick="alert('Tool running')">Run Tool</button>
-<div class="result">Result area</div>
-<br><a href="../index.html">Back</a>
-</div>
-</div>
-</body>
-</html>
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>URL Encoder / Decoder</title><link rel="stylesheet" href="../css/style.css"></head><body><div class="section"><div class="toolbox"><h1>URL Encoder / Decoder</h1><p class="desc">Encode or decode URL strings.</p><textarea id="input"></textarea><div class="toolbar"><button class="toolbtn" onclick="enc()">Encode</button><button class="toolbtn secondary" onclick="dec()">Decode</button></div><div id="result" class="result"></div><a class="open" href="../index.html">Back to SmartTools</a></div></div><script src="../js/helpers.js"></script><script>
+function enc(){byId('result').innerText=encodeURIComponent(byId('input').value);}
+function dec(){try{byId('result').innerText=decodeURIComponent(byId('input').value);}catch(e){byId('result').innerText='Invalid encoded URL';}}
+</script></body></html>
