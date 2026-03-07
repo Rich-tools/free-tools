@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>URL Encoder / Decoder | Free Tools Hub</title>
+  <meta name="description" content="Encode or decode strings for safe URL usage." />
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+  <main class="container tool-page">
+    <a class="back-link" href="../index.html">&larr; Back to home</a>
+    <div class="tool-wrap" style="margin-top:18px;">
+      <section class="editor">
+        <h1>URL Encoder / Decoder</h1>
+        <p class="note">Encode or decode strings for safe URL usage.</p>
+        
+<label for="urlInput">Input</label>
+<textarea id="urlInput" placeholder="Enter text or encoded URL..."></textarea>
+<div class="actions">
+  <button id="encBtn">Encode URL</button>
+  <button id="decBtn">Decode URL</button>
+</div>
+<div class="output" id="urlOutput"></div>
+
+      </section>
+      <aside class="panel">
+        <h2>About this tool</h2>
+        <p>Encode or decode strings for safe URL usage.</p>
+        <p class="small">Tip: expand each tool page with FAQs and extra examples later for better Google ranking.</p>
+      </aside>
+    </div>
+  </main>
+  <script src="../js/tracking.js"></script>
+  <script>
+document.getElementById('encBtn').onclick=function(){document.getElementById('urlOutput').textContent=encodeURIComponent(document.getElementById('urlInput').value);trackAction('URL encoded');};
+document.getElementById('decBtn').onclick=function(){try{document.getElementById('urlOutput').textContent=decodeURIComponent(document.getElementById('urlInput').value);trackAction('URL decoded');}catch(e){document.getElementById('urlOutput').textContent='Invalid encoded text.';}};
+</script>
+</body>
+</html>

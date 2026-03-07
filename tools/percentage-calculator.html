@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Percentage Calculator | Free Tools Hub</title>
+  <meta name="description" content="Solve three common percentage problems." />
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+  <main class="container tool-page">
+    <a class="back-link" href="../index.html">&larr; Back to home</a>
+    <div class="tool-wrap" style="margin-top:18px;">
+      <section class="editor">
+        <h1>Percentage Calculator</h1>
+        <p class="note">Solve three common percentage problems.</p>
+        
+<div class="row">
+  <div><label for="percent">What is X% of Y?</label><input id="percent" type="number" placeholder="X" /></div>
+  <div><label for="base">Base number Y</label><input id="base" type="number" placeholder="Y" /></div>
+</div>
+<div class="actions"><button id="percentBtn">Calculate</button></div>
+<div class="output" id="percentOutput"></div>
+
+      </section>
+      <aside class="panel">
+        <h2>About this tool</h2>
+        <p>Solve three common percentage problems.</p>
+        <p class="small">Tip: expand each tool page with FAQs and extra examples later for better Google ranking.</p>
+      </aside>
+    </div>
+  </main>
+  <script src="../js/tracking.js"></script>
+  <script>
+document.getElementById('percentBtn').onclick=function(){
+ const p=parseFloat(document.getElementById('percent').value); const b=parseFloat(document.getElementById('base').value);
+ if(isNaN(p)||isNaN(b)){document.getElementById('percentOutput').textContent='Enter valid numbers.';return;}
+ document.getElementById('percentOutput').textContent=`${p}% of ${b} = ${(p/100*b).toFixed(2)}`;
+ trackAction('Percentage calculated');
+};
+</script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JSON Formatter | Free Tools Hub</title>
+  <meta name="description" content="Beautify and validate raw JSON in one click." />
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+  <main class="container tool-page">
+    <a class="back-link" href="../index.html">&larr; Back to home</a>
+    <div class="tool-wrap" style="margin-top:18px;">
+      <section class="editor">
+        <h1>JSON Formatter</h1>
+        <p class="note">Beautify and validate raw JSON in one click.</p>
+        
+<label for="jsonInput">JSON input</label>
+<textarea id="jsonInput" placeholder='{"name":"John","age":25}'></textarea>
+<div class="actions">
+  <button id="formatBtn">Format JSON</button>
+  <button class="alt" id="minifyBtn">Minify</button>
+</div>
+<div class="output code" id="jsonOutput"></div>
+
+      </section>
+      <aside class="panel">
+        <h2>About this tool</h2>
+        <p>Beautify and validate raw JSON in one click.</p>
+        <p class="small">Tip: expand each tool page with FAQs and extra examples later for better Google ranking.</p>
+      </aside>
+    </div>
+  </main>
+  <script src="../js/tracking.js"></script>
+  <script>
+function showResult(type){
+ const input=document.getElementById('jsonInput').value;
+ try{
+   const obj=JSON.parse(input);
+   document.getElementById('jsonOutput').textContent = type==='minify' ? JSON.stringify(obj) : JSON.stringify(obj,null,2);
+   trackAction('JSON formatted');
+ }catch(e){ document.getElementById('jsonOutput').textContent='Invalid JSON: '+e.message; }
+}
+document.getElementById('formatBtn').onclick=function(){showResult('pretty')};
+document.getElementById('minifyBtn').onclick=function(){showResult('minify')};
+</script>
+</body>
+</html>

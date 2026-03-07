@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Slug Generator | Free Tools Hub</title>
+  <meta name="description" content="Create a clean slug from any title or phrase." />
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+  <main class="container tool-page">
+    <a class="back-link" href="../index.html">&larr; Back to home</a>
+    <div class="tool-wrap" style="margin-top:18px;">
+      <section class="editor">
+        <h1>Slug Generator</h1>
+        <p class="note">Create a clean slug from any title or phrase.</p>
+        
+<label for="slugInput">Title or phrase</label>
+<input id="slugInput" type="text" placeholder="My Awesome Blog Post Title" />
+<div class="actions"><button id="slugBtn">Generate slug</button></div>
+<div class="output" id="slugOutput"></div>
+
+      </section>
+      <aside class="panel">
+        <h2>About this tool</h2>
+        <p>Create a clean slug from any title or phrase.</p>
+        <p class="small">Tip: expand each tool page with FAQs and extra examples later for better Google ranking.</p>
+      </aside>
+    </div>
+  </main>
+  <script src="../js/tracking.js"></script>
+  <script>
+document.getElementById('slugBtn').onclick=function(){
+ const slug=document.getElementById('slugInput').value.toLowerCase().trim().replace(/[^a-z0-9\s-]/g,'').replace(/\s+/g,'-').replace(/-+/g,'-');
+ document.getElementById('slugOutput').textContent=slug;
+ trackAction('Slug generated');
+};
+</script>
+</body>
+</html>

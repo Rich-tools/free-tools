@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tracking Dashboard | Free Tools Hub</title>
+  <meta name="description" content="Simple analytics dashboard for Free Tools Hub." />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <main class="container tool-page">
+    <a class="back-link" href="index.html">&larr; Back to home</a>
+    <div class="tool-wrap" style="margin-top:18px;">
+      <section class="editor">
+        <h1>Tracking dashboard</h1>
+        <p class="note">This dashboard shows <strong>local demo analytics</strong> saved in your browser only. It is useful for testing that tracking works. For real users on GitHub Pages, add an external analytics script.</p>
+        <div class="stats" style="margin:20px 0;">
+          <div class="stat"><strong id="totalPageViews">0</strong><span>Total page views</span></div>
+          <div class="stat"><strong id="totalToolOpens">0</strong><span>Total tool opens</span></div>
+          <div class="stat"><strong id="totalActions">0</strong><span>Total actions</span></div>
+        </div>
+        <h2>Pages</h2>
+        <table class="table"><thead><tr><th>Page</th><th>Views</th></tr></thead><tbody id="pageRows"></tbody></table>
+        <h2 style="margin-top:22px;">Actions</h2>
+        <table class="table"><thead><tr><th>Action</th><th>Count</th></tr></thead><tbody id="actionRows"></tbody></table>
+      </section>
+      <aside class="panel">
+        <h2>How to track real users</h2>
+        <p>Because GitHub Pages is static hosting, it cannot save visitor data in a private database by itself.</p>
+        <p><strong>Best free setup:</strong></p>
+        <ol>
+          <li>Create Google Analytics 4 or Microsoft Clarity.</li>
+          <li>Copy the tracking script they give you.</li>
+          <li>Paste it inside the <span class="code">&lt;head&gt;</span> of every page, or a common template if you later use a generator.</li>
+        </ol>
+        <p class="warning">This project already includes a clean place for simple action tracking using <span class="code">trackAction('Action name')</span>.</p>
+        <button class="alt" id="resetAnalytics">Reset local demo data</button>
+      </aside>
+    </div>
+  </main>
+  <script src="js/tracking.js"></script>
+  <script>
+    function sum(obj){ return Object.values(obj || {}).reduce((a,b)=>a+b,0); }
+    function rows(htmlId, obj){
+      const el = document.getElementById(htmlId);
+      const entries = Object.entries(obj || {}).sort((a,b)=>b[1]-a[1]);
+      el.innerHTML = entries.length ? entries.map(([k,v])=>`<tr><td>${k}</td><td>${v}</td></tr>`).join('') : '<tr><td colspan="2">No data yet</td></tr>';
+    }
+    const data = getAnalyticsData();
+    document.getElementById('totalPageViews').textContent = sum(data.pageViews);
+    document.getElementById('totalToolOpens').textContent = sum(data.toolOpens);
+    document.getElementById('totalActions').textContent = sum(data.actions);
+    rows('pageRows', data.pageViews);
+    rows('actionRows', data.actions);
+    document.getElementById('resetAnalytics').onclick = function(){
+      localStorage.removeItem('freeToolsAnalytics');
+      location.reload();
+    };
+  </script>
+</body>
+</html>

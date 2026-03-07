@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Age Calculator | Free Tools Hub</title>
+  <meta name="description" content="Calculate exact age from date of birth." />
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+  <main class="container tool-page">
+    <a class="back-link" href="../index.html">&larr; Back to home</a>
+    <div class="tool-wrap" style="margin-top:18px;">
+      <section class="editor">
+        <h1>Age Calculator</h1>
+        <p class="note">Calculate exact age from date of birth.</p>
+        
+<label for="birthDate">Date of birth</label>
+<input id="birthDate" type="date" />
+<div class="actions"><button id="ageBtn">Calculate age</button></div>
+<div class="output" id="ageOutput"></div>
+
+      </section>
+      <aside class="panel">
+        <h2>About this tool</h2>
+        <p>Calculate exact age from date of birth.</p>
+        <p class="small">Tip: expand each tool page with FAQs and extra examples later for better Google ranking.</p>
+      </aside>
+    </div>
+  </main>
+  <script src="../js/tracking.js"></script>
+  <script>
+document.getElementById('ageBtn').onclick=function(){
+ const val=document.getElementById('birthDate').value;
+ if(!val){document.getElementById('ageOutput').textContent='Please select a birth date.';return;}
+ const birth=new Date(val); const now=new Date();
+ let years=now.getFullYear()-birth.getFullYear();
+ let months=now.getMonth()-birth.getMonth();
+ let days=now.getDate()-birth.getDate();
+ if(days<0){ months--; days += new Date(now.getFullYear(), now.getMonth(), 0).getDate(); }
+ if(months<0){ years--; months += 12; }
+ document.getElementById('ageOutput').textContent=`${years} years, ${months} months, ${days} days`;
+ trackAction('Age calculated');
+};
+</script>
+</body>
+</html>

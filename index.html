@@ -5,314 +5,145 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Free Tools Hub | 15 Powerful Online Tools</title>
   <meta name="description" content="Free online tools for text, developers, SEO, and calculators. Fast, simple, and easy to use." />
-  <meta name="keywords" content="free online tools, word counter, password generator, qr code generator, json formatter, text tools" />
-  <meta name="author" content="kidume105" />
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, Helvetica, sans-serif;
-    }
-
-    body {
-      background: #f5f7fb;
-      color: #1f2937;
-      line-height: 1.6;
-    }
-
-    header {
-      background: linear-gradient(135deg, #0f172a, #1d4ed8);
-      color: white;
-      padding: 60px 20px;
-      text-align: center;
-    }
-
-    header h1 {
-      font-size: 2.4rem;
-      margin-bottom: 12px;
-    }
-
-    header p {
-      max-width: 700px;
-      margin: 0 auto 24px;
-      font-size: 1rem;
-      opacity: 0.95;
-    }
-
-    .hero-buttons {
-      display: flex;
-      justify-content: center;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-
-    .hero-buttons a {
-      text-decoration: none;
-      padding: 12px 18px;
-      border-radius: 10px;
-      font-weight: bold;
-      transition: 0.3s ease;
-    }
-
-    .btn-primary {
-      background: white;
-      color: #1d4ed8;
-    }
-
-    .btn-primary:hover {
-      background: #e5e7eb;
-    }
-
-    .btn-secondary {
-      border: 1px solid rgba(255,255,255,0.5);
-      color: white;
-    }
-
-    .btn-secondary:hover {
-      background: rgba(255,255,255,0.1);
-    }
-
-    .container {
-      width: 90%;
-      max-width: 1150px;
-      margin: 40px auto;
-    }
-
-    .section-title {
-      text-align: center;
-      margin-bottom: 10px;
-      font-size: 2rem;
-      color: #111827;
-    }
-
-    .section-subtitle {
-      text-align: center;
-      max-width: 700px;
-      margin: 0 auto 30px;
-      color: #6b7280;
-    }
-
-    .tools-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 20px;
-    }
-
-    .tool-card {
-      background: white;
-      border-radius: 16px;
-      padding: 22px;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .tool-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
-    }
-
-    .tool-card h3 {
-      margin-bottom: 10px;
-      color: #111827;
-      font-size: 1.1rem;
-    }
-
-    .tool-card p {
-      color: #6b7280;
-      font-size: 0.95rem;
-      margin-bottom: 16px;
-      min-height: 70px;
-    }
-
-    .tool-card a {
-      display: inline-block;
-      text-decoration: none;
-      background: #2563eb;
-      color: white;
-      padding: 10px 14px;
-      border-radius: 10px;
-      font-size: 0.95rem;
-      font-weight: bold;
-    }
-
-    .tool-card a:hover {
-      background: #1d4ed8;
-    }
-
-    .about-box {
-      margin-top: 50px;
-      background: white;
-      border-radius: 16px;
-      padding: 28px;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-    }
-
-    .about-box h2 {
-      margin-bottom: 12px;
-      color: #111827;
-    }
-
-    .about-box p {
-      color: #4b5563;
-      margin-bottom: 10px;
-    }
-
-    footer {
-      margin-top: 50px;
-      background: #111827;
-      color: #d1d5db;
-      text-align: center;
-      padding: 24px 16px;
-    }
-
-    footer a {
-      color: #93c5fd;
-      text-decoration: none;
-    }
-
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 1.8rem;
-      }
-
-      .section-title {
-        font-size: 1.6rem;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-
-  <header>
-    <h1>Free Tools Hub</h1>
-    <p>
-      A collection of powerful free online tools for text, developers, SEO, and calculators.
-      Fast, simple, and easy to use on any device.
-    </p>
-    <div class="hero-buttons">
-      <a href="#tools" class="btn-primary">Explore Tools</a>
-      <a href="#about" class="btn-secondary">Learn More</a>
+  <header class="site-header">
+    <div class="container">
+      <nav class="nav">
+        <a class="brand" href="index.html">Free Tools Hub</a>
+        <div class="nav-links">
+          <a href="#tools">Tools</a>
+          <a href="admin.html">Tracking</a>
+        </div>
+      </nav>
+      <div class="hero">
+        <h1>15 powerful free tools in one website</h1>
+        <p>Fast tools for text, developers, SEO, and everyday calculations. This starter project works on GitHub Pages with only HTML, CSS, and JavaScript.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#tools">Explore tools</a>
+          <a class="btn btn-secondary" href="admin.html">View tracking setup</a>
+        </div>
+      </div>
     </div>
   </header>
 
   <main class="container">
-    <section id="tools">
+    <section class="section" id="tools">
       <h2 class="section-title">Popular Free Tools</h2>
-      <p class="section-subtitle">
-        Start with these 15 high-demand tools. We will activate them one by one as the website grows.
-      </p>
-
-      <div class="tools-grid">
-        <div class="tool-card">
+      <p class="section-subtitle">Each tool has its own page for better SEO. Search below to filter the tool list.</p>
+      <div class="card" style="margin-bottom:22px;">
+        <label for="toolSearch">Search tools</label>
+        <input id="toolSearch" type="text" placeholder="Search by tool name or use case" />
+      </div>
+      <div class="category-badges">
+        <span class="badge">Text Tools</span>
+        <span class="badge">Developer Tools</span>
+        <span class="badge">SEO Tools</span>
+        <span class="badge">Calculators</span>
+      </div>
+      <div class="grid tools-grid">
+        <article class="card tool-card">
           <h3>Word Counter</h3>
-          <p>Count words, characters, and text length instantly for essays, blogs, and documents.</p>
-          <a href="#">Open Tool</a>
-        </div>
-
-        <div class="tool-card">
+          <p>Count words, characters, sentences, and paragraphs for essays, blogs, and documents.</p>
+          <a class="btn" href="tools/word-counter.html">Open tool</a>
+        </article>
+        <article class="card tool-card">
           <h3>Password Generator</h3>
-          <p>Create strong and secure passwords for your accounts in one click.</p>
-          <a href="#">Open Tool</a>
-        </div>
-
-        <div class="tool-card">
+          <p>Generate secure passwords using custom length and character options.</p>
+          <a class="btn" href="tools/password-generator.html">Open tool</a>
+        </article>
+        <article class="card tool-card">
           <h3>QR Code Generator</h3>
-          <p>Convert links or text into QR codes that can be scanned from any device.</p>
-          <a href="#">Open Tool</a>
-        </div>
-
-        <div class="tool-card">
+          <p>Turn text or URLs into QR codes instantly.</p>
+          <a class="btn" href="tools/qr-code-generator.html">Open tool</a>
+        </article>
+        <article class="card tool-card">
           <h3>JSON Formatter</h3>
-          <p>Format and beautify JSON data quickly for easier reading and debugging.</p>
-          <a href="#">Open Tool</a>
-        </div>
-
-        <div class="tool-card">
+          <p>Beautify and validate JSON for easier reading.</p>
+          <a class="btn" href="tools/json-formatter.html">Open tool</a>
+        </article>
+        <article class="card tool-card">
           <h3>Base64 Encoder / Decoder</h3>
-          <p>Encode and decode Base64 strings for development and data handling tasks.</p>
-          <a href="#">Open Tool</a>
-        </div>
-
-        <div class="tool-card">
+          <p>Encode plain text to Base64 or decode Base64 to plain text.</p>
+          <a class="btn" href="tools/base64-encoder-decoder.html">Open tool</a>
+        </article>
+        <article class="card tool-card">
           <h3>URL Encoder / Decoder</h3>
-          <p>Encode unsafe URL characters or decode encoded URLs instantly.</p>
-          <a href="#">Open Tool</a>
-        </div>
-
-        <div class="tool-card">
+          <p>Encode special URL characters or decode encoded strings.</p>
+          <a class="btn" href="tools/url-encoder-decoder.html">Open tool</a>
+        </article>
+        <article class="card tool-card">
           <h3>Case Converter</h3>
-          <p>Convert text to uppercase, lowercase, sentence case, or title case.</p>
-          <a href="#">Open Tool</a>
-        </div>
-
-        <div class="tool-card">
+          <p>Convert text to uppercase, lowercase, title case, or sentence case.</p>
+          <a class="btn" href="tools/case-converter.html">Open tool</a>
+        </article>
+        <article class="card tool-card">
           <h3>Remove Extra Spaces</h3>
-          <p>Clean messy text by removing unnecessary spaces and line breaks.</p>
-          <a href="#">Open Tool</a>
-        </div>
-
-        <div class="tool-card">
+          <p>Clean messy text by removing extra spaces and blank lines.</p>
+          <a class="btn" href="tools/remove-extra-spaces.html">Open tool</a>
+        </article>
+        <article class="card tool-card">
           <h3>Slug Generator</h3>
-          <p>Generate SEO-friendly slugs from titles, phrases, or blog headings.</p>
-          <a href="#">Open Tool</a>
-        </div>
-
-        <div class="tool-card">
+          <p>Create clean SEO-friendly slugs from titles and phrases.</p>
+          <a class="btn" href="tools/slug-generator.html">Open tool</a>
+        </article>
+        <article class="card tool-card">
           <h3>Age Calculator</h3>
-          <p>Calculate exact age from a date of birth in years, months, and days.</p>
-          <a href="#">Open Tool</a>
-        </div>
-
-        <div class="tool-card">
+          <p>Calculate age in years, months, and days from a birth date.</p>
+          <a class="btn" href="tools/age-calculator.html">Open tool</a>
+        </article>
+        <article class="card tool-card">
           <h3>BMI Calculator</h3>
-          <p>Check body mass index easily using your weight and height.</p>
-          <a href="#">Open Tool</a>
-        </div>
-
-        <div class="tool-card">
+          <p>Calculate body mass index and view category.</p>
+          <a class="btn" href="tools/bmi-calculator.html">Open tool</a>
+        </article>
+        <article class="card tool-card">
           <h3>Percentage Calculator</h3>
-          <p>Solve common percentage calculations for school, business, and daily use.</p>
-          <a href="#">Open Tool</a>
-        </div>
-
-        <div class="tool-card">
+          <p>Solve common percentage calculations quickly.</p>
+          <a class="btn" href="tools/percentage-calculator.html">Open tool</a>
+        </article>
+        <article class="card tool-card">
           <h3>Random Number Generator</h3>
-          <p>Generate random numbers between any range for games, testing, or selection.</p>
-          <a href="#">Open Tool</a>
-        </div>
-
-        <div class="tool-card">
+          <p>Generate random numbers within a selected range.</p>
+          <a class="btn" href="tools/random-number-generator.html">Open tool</a>
+        </article>
+        <article class="card tool-card">
           <h3>Meta Tag Generator</h3>
-          <p>Create basic SEO meta tags for websites and landing pages.</p>
-          <a href="#">Open Tool</a>
-        </div>
-
-        <div class="tool-card">
+          <p>Generate basic SEO meta tags for a web page.</p>
+          <a class="btn" href="tools/meta-tag-generator.html">Open tool</a>
+        </article>
+        <article class="card tool-card">
           <h3>Keyword Density Checker</h3>
-          <p>Analyze text and estimate keyword frequency for simple SEO checks.</p>
-          <a href="#">Open Tool</a>
-        </div>
+          <p>Check how often a keyword appears in text.</p>
+          <a class="btn" href="tools/keyword-density-checker.html">Open tool</a>
+        </article>
       </div>
     </section>
 
-    <section id="about" class="about-box">
-      <h2>About This Website</h2>
-      <p>
-        Free Tools Hub is built to provide simple, fast, and useful tools that people search for every day.
-      </p>
-      <p>
-        The goal is to grow this website with practical tools that solve real problems and can attract traffic from Google.
-      </p>
-      <p>
-        More tools and features will be added soon.
-      </p>
+    <section class="section">
+      <div class="grid" style="grid-template-columns:1fr 1fr;gap:20px;">
+        <div class="card about">
+          <h2>How tracking works</h2>
+          <p>This package includes <strong>simple built-in local tracking</strong> using <span class="code">localStorage</span> so you can test page views and tool clicks instantly on your own browser.</p>
+          <p>For real visitors across all devices, connect an external analytics service like Google Analytics or Microsoft Clarity by pasting your tracking script into the site.</p>
+          <a class="btn" href="admin.html">Open tracking dashboard</a>
+        </div>
+        <div class="card seo-note">
+          <h2>Good for SEO</h2>
+          <p>Every tool has a dedicated page, title, description, and clear content structure. That gives you a better chance to rank for specific keywords like “word counter tool” or “BMI calculator”.</p>
+          <p class="small">Tip: later you can add more paragraphs, FAQs, and internal links on each tool page to improve traffic.</p>
+        </div>
+      </div>
     </section>
   </main>
 
-  <footer>
-    <p>&copy; 2025 Free Tools Hub. Built by <a href="https://github.com/kidume105" target="_blank">kidume105</a></p>
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="year"></span> Free Tools Hub. Built for GitHub Pages.</p>
+    </div>
   </footer>
-
+  <script src="js/tracking.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>

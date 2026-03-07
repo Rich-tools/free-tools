@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Remove Extra Spaces | Free Tools Hub</title>
+  <meta name="description" content="Remove repeated spaces and empty lines from text." />
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+  <main class="container tool-page">
+    <a class="back-link" href="../index.html">&larr; Back to home</a>
+    <div class="tool-wrap" style="margin-top:18px;">
+      <section class="editor">
+        <h1>Remove Extra Spaces</h1>
+        <p class="note">Remove repeated spaces and empty lines from text.</p>
+        
+<label for="spaceInput">Text</label>
+<textarea id="spaceInput" placeholder="Paste messy text here..."></textarea>
+<div class="actions">
+  <button id="cleanSpaces">Clean text</button>
+</div>
+<div class="output" id="spaceOutput"></div>
+
+      </section>
+      <aside class="panel">
+        <h2>About this tool</h2>
+        <p>Remove repeated spaces and empty lines from text.</p>
+        <p class="small">Tip: expand each tool page with FAQs and extra examples later for better Google ranking.</p>
+      </aside>
+    </div>
+  </main>
+  <script src="../js/tracking.js"></script>
+  <script>
+document.getElementById('cleanSpaces').onclick=function(){
+ const clean=document.getElementById('spaceInput').value.replace(/[ 	]+/g,' ').replace(/
+{3,}/g,'
+
+').trim();
+ document.getElementById('spaceOutput').textContent=clean;
+ trackAction('Spaces removed');
+};
+</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BMI Calculator | Free Tools Hub</title>
+  <meta name="description" content="Calculate body mass index from height and weight." />
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+  <main class="container tool-page">
+    <a class="back-link" href="../index.html">&larr; Back to home</a>
+    <div class="tool-wrap" style="margin-top:18px;">
+      <section class="editor">
+        <h1>BMI Calculator</h1>
+        <p class="note">Calculate body mass index from height and weight.</p>
+        
+<div class="row">
+  <div><label for="weight">Weight (kg)</label><input id="weight" type="number" step="0.1" /></div>
+  <div><label for="height">Height (cm)</label><input id="height" type="number" step="0.1" /></div>
+</div>
+<div class="actions"><button id="bmiBtn">Calculate BMI</button></div>
+<div class="output" id="bmiOutput"></div>
+
+      </section>
+      <aside class="panel">
+        <h2>About this tool</h2>
+        <p>Calculate body mass index from height and weight.</p>
+        <p class="small">Tip: expand each tool page with FAQs and extra examples later for better Google ranking.</p>
+      </aside>
+    </div>
+  </main>
+  <script src="../js/tracking.js"></script>
+  <script>
+document.getElementById('bmiBtn').onclick=function(){
+ const w=parseFloat(document.getElementById('weight').value); const h=parseFloat(document.getElementById('height').value)/100;
+ if(!w || !h){document.getElementById('bmiOutput').textContent='Enter valid weight and height.';return;}
+ const bmi=(w/(h*h)).toFixed(2);
+ let cat='';
+ if(bmi<18.5) cat='Underweight'; else if(bmi<25) cat='Normal'; else if(bmi<30) cat='Overweight'; else cat='Obese';
+ document.getElementById('bmiOutput').textContent=`BMI: ${bmi} (${cat})`;
+ trackAction('BMI calculated');
+};
+</script>
+</body>
+</html>
