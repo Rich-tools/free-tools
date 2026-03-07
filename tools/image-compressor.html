@@ -4,43 +4,46 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Image Compressor | SmartTools</title>
-<meta name="description" content="Compress image by exporting JPG with quality control.">
+<meta name="description" content="Compress images in your browser and download JPG.">
 <link rel="stylesheet" href="../css/style.css">
+
 </head>
 <body>
 <div class="section">
   <div class="toolbox">
     <h1>Image Compressor</h1>
-    <p class="desc">Compress image by exporting JPG with quality control.</p>
-    <input class="input" id="file" type="file" accept="image/*">
+    <p class="desc">Compress images in your browser and download JPG.</p>
+    
+<input class="input" id="file" type="file" accept="image/*">
 <div class="row">
-  <div><label>Quality</label><input class="input" id="quality" type="number" step="0.1" min="0.1" max="1" value="0.7"></div>
-  <div><label>Resize width</label><input class="input" id="width" type="number" placeholder="Optional"></div>
+  <input class="input" id="quality" type="number" step="0.1" min="0.1" max="1" value="0.7" placeholder="Quality">
+  <input class="input" id="width" type="number" placeholder="Optional width">
 </div>
 <div class="toolbar">
-  <button class="tool-btn" onclick="compress()">Compress</button>
-  <button class="tool-btn secondary" onclick="downloadJpg()">Download JPG</button>
+  <button class="toolbtn" onclick="compress()">Compress</button>
+  <button class="toolbtn secondary" onclick="downloadOut()">Download JPG</button>
 </div>
 <canvas id="canvas"></canvas>
 <div id="info" class="result"></div>
-    <a class="back-link" href="../index.html">← Back to SmartTools</a>
+
+    <a class="back" href="../index.html">← Back to SmartTools</a>
   </div>
 </div>
 <script src="../js/helpers.js"></script>
+
 <script>
-let imgObj, originalFile, jpgData='';
-byId('file').addEventListener('change', e=>{ originalFile=e.target.files[0]; if(!originalFile) return; imgObj=new Image(); imgObj.src=URL.createObjectURL(originalFile); });
+let img, file, out='';
+byId('file').addEventListener('change', e=>{file=e.target.files[0]; if(!file)return; img=new Image(); img.src=URL.createObjectURL(file);});
 function compress(){
-  if(!imgObj){ alert('Upload image first'); return; }
-  const q=Math.max(0.1,Math.min(1,parseFloat(byId('quality').value||'0.7')));
-  let w=parseInt(byId('width').value||'0'), h=0;
-  if(w){ h=Math.round(imgObj.height*(w/imgObj.width)); } else { w=imgObj.width; h=imgObj.height; }
-  const c=byId('canvas'); c.width=w; c.height=h; c.getContext('2d').drawImage(imgObj,0,0,w,h);
-  jpgData=c.toDataURL('image/jpeg',q);
-  const est=Math.round((jpgData.length*3/4)/1024);
-  byId('info').innerText=`Original: ${(originalFile.size/1024).toFixed(1)} KB | New estimate: ${est.toFixed(1)} KB`;
+ if(!img){alert('Upload image first'); return;}
+ const q=Math.max(0.1,Math.min(1,parseFloat(byId('quality').value||'0.7')));
+ let w=parseInt(byId('width').value||'0'), h=0;
+ if(w){h=Math.round(img.height*(w/img.width));} else {w=img.width; h=img.height;}
+ const c=byId('canvas'); c.width=w; c.height=h; c.getContext('2d').drawImage(img,0,0,w,h);
+ out=c.toDataURL('image/jpeg',q);
+ byId('info').innerText=`Original: ${(file.size/1024).toFixed(1)} KB`;
 }
-function downloadJpg(){ if(!jpgData){ alert('Compress first'); return; } const a=document.createElement('a'); a.href=jpgData; a.download='compressed.jpg'; a.click(); }
+function downloadOut(){if(!out){alert('Compress first'); return;} const a=document.createElement('a'); a.href=out; a.download='compressed.jpg'; a.click();}
 </script>
 </body>
 </html>

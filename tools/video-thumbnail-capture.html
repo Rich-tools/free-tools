@@ -4,34 +4,34 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Video Thumbnail Capture | SmartTools</title>
-<meta name="description" content="Capture a frame from uploaded video.">
+<meta name="description" content="Capture a frame from an uploaded video.">
 <link rel="stylesheet" href="../css/style.css">
+
 </head>
 <body>
 <div class="section">
   <div class="toolbox">
     <h1>Video Thumbnail Capture</h1>
-    <p class="desc">Capture a frame from uploaded video.</p>
-    <input class="input" id="file" type="file" accept="video/*">
-<input class="input" id="seconds" type="number" step="0.1" value="1" placeholder="Capture at seconds">
-<div class="toolbar">
-  <button class="tool-btn" onclick="capture()">Capture Frame</button>
-  <button class="tool-btn secondary" onclick="downloadCanvas(byId('canvas'),'video-thumbnail.png')">Download PNG</button>
-</div>
+    <p class="desc">Capture a frame from an uploaded video.</p>
+    
+<input class="input" id="file" type="file" accept="video/*">
+<input class="input" id="sec" type="number" step="0.1" value="1" placeholder="Capture time in seconds">
+<div class="toolbar"><button class="toolbtn" onclick="capture()">Capture Frame</button><button class="toolbtn secondary" onclick="downloadCanvas(byId('canvas'),'thumbnail.png')">Download PNG</button></div>
 <video id="video" controls style="width:100%;margin-top:14px"></video>
 <canvas id="canvas"></canvas>
-    <a class="back-link" href="../index.html">← Back to SmartTools</a>
+
+    <a class="back" href="../index.html">← Back to SmartTools</a>
   </div>
 </div>
 <script src="../js/helpers.js"></script>
+
 <script>
-let video=byId('video');
-byId('file').addEventListener('change', e=>{ const file=e.target.files[0]; if(!file) return; video.src=URL.createObjectURL(file); });
+let v=byId('video');
+byId('file').addEventListener('change', e=>{const f=e.target.files[0]; if(!f)return; v.src=URL.createObjectURL(f);});
 function capture(){
-  if(!video.src){ alert('Upload video first'); return; }
-  const secs=parseFloat(byId('seconds').value||'1');
-  video.currentTime=secs;
-  video.onseeked=()=>{ const c=byId('canvas'); c.width=video.videoWidth||320; c.height=video.videoHeight||180; c.getContext('2d').drawImage(video,0,0,c.width,c.height); };
+ if(!v.src){alert('Upload video first'); return;}
+ v.currentTime=parseFloat(byId('sec').value||'1');
+ v.onseeked=()=>{const c=byId('canvas'); c.width=v.videoWidth||320; c.height=v.videoHeight||180; c.getContext('2d').drawImage(v,0,0,c.width,c.height);};
 }
 </script>
 </body>

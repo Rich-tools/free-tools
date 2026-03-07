@@ -4,27 +4,31 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>QR Code Generator | SmartTools</title>
-<meta name="description" content="Turn text or URLs into QR codes.">
+<meta name="description" content="Generate QR codes from links or text.">
 <link rel="stylesheet" href="../css/style.css">
+
 </head>
 <body>
 <div class="section">
   <div class="toolbox">
     <h1>QR Code Generator</h1>
-    <p class="desc">Turn text or URLs into QR codes.</p>
-    <input class="input" id="input" placeholder="Enter text or URL">
-<div class="toolbar"><button class="tool-btn" onclick="makeQR()">Generate QR</button></div>
+    <p class="desc">Generate QR codes from links or text.</p>
+    
+<input class="input" id="input" placeholder="Paste URL or text">
+<div class="toolbar"><button class="toolbtn" onclick="run()">Generate QR</button></div>
 <div id="wrap"></div>
-    <a class="back-link" href="../index.html">← Back to SmartTools</a>
+
+    <a class="back" href="../index.html">← Back to SmartTools</a>
   </div>
 </div>
 <script src="../js/helpers.js"></script>
+
 <script>
-function makeQR(){
-  const v = byId('input').value.trim();
-  if(!v){ byId('wrap').innerHTML=''; return; }
-  const url = 'https://api.qrserver.com/v1/create-qr-code/?size=260x260&data=' + encodeURIComponent(v);
-  byId('wrap').innerHTML = `<img class="preview" src="${url}" alt="QR"><div class="toolbar"><a class="tool-btn secondary" href="${url}" download="qr-code.png">Download QR</a></div>`;
+function run(){
+ const v=byId('input').value.trim();
+ if(!v){byId('wrap').innerHTML=''; return;}
+ const url='https://api.qrserver.com/v1/create-qr-code/?size=260x260&data='+encodeURIComponent(v);
+ byId('wrap').innerHTML=`<img class="preview" src="${url}"><div class="toolbar"><a class="toolbtn secondary" href="${url}" download="qr-code.png">Download</a></div>`;
 }
 </script>
 </body>

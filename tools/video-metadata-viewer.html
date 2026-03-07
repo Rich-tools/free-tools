@@ -4,26 +4,30 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Video Metadata Viewer | SmartTools</title>
-<meta name="description" content="View video duration, size, and resolution.">
+<meta name="description" content="See duration, size, and resolution of a video.">
 <link rel="stylesheet" href="../css/style.css">
+
 </head>
 <body>
 <div class="section">
   <div class="toolbox">
     <h1>Video Metadata Viewer</h1>
-    <p class="desc">View video duration, size, and resolution.</p>
-    <input class="input" id="file" type="file" accept="video/*">
+    <p class="desc">See duration, size, and resolution of a video.</p>
+    
+<input class="input" id="file" type="file" accept="video/*">
 <div id="result" class="result">Upload a video file.</div>
-    <a class="back-link" href="../index.html">← Back to SmartTools</a>
+
+    <a class="back" href="../index.html">← Back to SmartTools</a>
   </div>
 </div>
 <script src="../js/helpers.js"></script>
+
 <script>
 byId('file').addEventListener('change', e=>{
-  const file=e.target.files[0]; if(!file) return;
-  const video=document.createElement('video'); video.preload='metadata';
-  video.onloadedmetadata=()=>{ byId('result').innerText=`Name: ${file.name}\nType: ${file.type||'unknown'}\nSize: ${(file.size/1024/1024).toFixed(2)} MB\nDuration: ${video.duration.toFixed(2)} sec\nResolution: ${video.videoWidth} x ${video.videoHeight}`; };
-  video.src=URL.createObjectURL(file);
+ const f=e.target.files[0]; if(!f)return;
+ const v=document.createElement('video'); v.preload='metadata';
+ v.onloadedmetadata=()=>{byId('result').innerText=`Name: ${f.name}\nSize: ${(f.size/1024/1024).toFixed(2)} MB\nDuration: ${v.duration.toFixed(2)} sec\nResolution: ${v.videoWidth} x ${v.videoHeight}`;};
+ v.src=URL.createObjectURL(f);
 });
 </script>
 </body>

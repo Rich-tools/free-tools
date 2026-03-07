@@ -3,162 +3,126 @@
     "slug": "word-counter",
     "name": "Word Counter",
     "category": "Text",
-    "desc": "Count words, characters, sentences, and paragraphs."
+    "icon": "\ud83d\udcdd",
+    "desc": "Count words, characters, sentences, and reading time."
   },
   {
     "slug": "case-converter",
     "name": "Case Converter",
     "category": "Text",
-    "desc": "Convert text to uppercase, lowercase, title case, and sentence case."
-  },
-  {
-    "slug": "remove-extra-spaces",
-    "name": "Remove Extra Spaces",
-    "category": "Text",
-    "desc": "Clean repeated spaces and blank lines from text."
-  },
-  {
-    "slug": "slug-generator",
-    "name": "Slug Generator",
-    "category": "Text",
-    "desc": "Create clean SEO-friendly slugs from titles and headings."
+    "icon": "\ud83d\udd24",
+    "desc": "Convert text to upper, lower, title, and sentence case."
   },
   {
     "slug": "password-generator",
     "name": "Password Generator",
-    "category": "Generators",
-    "desc": "Generate strong secure passwords with copy and download."
+    "category": "Utility",
+    "icon": "\ud83d\udd10",
+    "desc": "Generate strong passwords with copy and download."
   },
   {
     "slug": "qr-code-generator",
     "name": "QR Code Generator",
-    "category": "Generators",
-    "desc": "Turn text or URLs into QR codes."
-  },
-  {
-    "slug": "random-number-generator",
-    "name": "Random Number Generator",
-    "category": "Generators",
-    "desc": "Generate random integers in any range."
-  },
-  {
-    "slug": "meta-tag-generator",
-    "name": "Meta Tag Generator",
-    "category": "SEO",
-    "desc": "Generate basic SEO meta tags for websites."
-  },
-  {
-    "slug": "keyword-density-checker",
-    "name": "Keyword Density Checker",
-    "category": "SEO",
-    "desc": "Analyze repeated keywords in a text."
+    "category": "Utility",
+    "icon": "\ud83d\udcf1",
+    "desc": "Generate QR codes from links or text."
   },
   {
     "slug": "json-formatter",
     "name": "JSON Formatter",
     "category": "Developer",
+    "icon": "\ud83e\udde9",
     "desc": "Beautify, minify, and validate JSON."
-  },
-  {
-    "slug": "base64-encoder-decoder",
-    "name": "Base64 Encoder Decoder",
-    "category": "Developer",
-    "desc": "Encode and decode Base64 text."
-  },
-  {
-    "slug": "url-encoder-decoder",
-    "name": "URL Encoder Decoder",
-    "category": "Developer",
-    "desc": "Encode and decode URLs quickly."
-  },
-  {
-    "slug": "age-calculator",
-    "name": "Age Calculator",
-    "category": "Calculators",
-    "desc": "Calculate age from date of birth."
-  },
-  {
-    "slug": "bmi-calculator",
-    "name": "BMI Calculator",
-    "category": "Calculators",
-    "desc": "Calculate body mass index from weight and height."
-  },
-  {
-    "slug": "percentage-calculator",
-    "name": "Percentage Calculator",
-    "category": "Calculators",
-    "desc": "Solve common percentage problems."
-  },
-  {
-    "slug": "discount-calculator",
-    "name": "Discount Calculator",
-    "category": "Calculators",
-    "desc": "Calculate discount amount and final price."
-  },
-  {
-    "slug": "loan-calculator",
-    "name": "Loan Calculator",
-    "category": "Calculators",
-    "desc": "Estimate monthly loan repayments."
-  },
-  {
-    "slug": "image-to-base64",
-    "name": "Image to Base64",
-    "category": "Images",
-    "desc": "Convert uploaded image to Base64 data URL."
-  },
-  {
-    "slug": "image-resizer",
-    "name": "Image Resizer",
-    "category": "Images",
-    "desc": "Resize image in-browser and download the result."
   },
   {
     "slug": "image-compressor",
     "name": "Image Compressor",
-    "category": "Images",
-    "desc": "Compress image by exporting JPG with quality control."
+    "category": "Image",
+    "icon": "\ud83d\uddbc\ufe0f",
+    "desc": "Compress images in your browser and download JPG."
+  },
+  {
+    "slug": "image-resizer",
+    "name": "Image Resizer",
+    "category": "Image",
+    "icon": "\ud83d\udcd0",
+    "desc": "Resize images and download PNG output."
   },
   {
     "slug": "image-cropper",
     "name": "Image Cropper",
-    "category": "Images",
-    "desc": "Create a simple center crop and download it."
+    "category": "Image",
+    "icon": "\u2702\ufe0f",
+    "desc": "Center-crop images quickly and save the result."
   },
   {
     "slug": "color-picker-from-image",
     "name": "Color Picker From Image",
-    "category": "Images",
-    "desc": "Click an uploaded image to pick colors."
+    "category": "Image",
+    "icon": "\ud83c\udfa8",
+    "desc": "Upload an image and click to pick HEX/RGB colors."
   },
   {
-    "slug": "audio-player",
-    "name": "Audio Player",
-    "category": "Audio",
-    "desc": "Preview uploaded audio files in-browser."
-  },
-  {
-    "slug": "audio-metadata-viewer",
-    "name": "Audio Metadata Viewer",
-    "category": "Audio",
-    "desc": "See audio duration, size, and type."
-  },
-  {
-    "slug": "tone-generator",
-    "name": "Tone Generator",
-    "category": "Audio",
-    "desc": "Generate a sine tone and download WAV."
+    "slug": "youtube-thumbnail-downloader",
+    "name": "YouTube Thumbnail Downloader",
+    "category": "Media",
+    "icon": "\u25b6\ufe0f",
+    "desc": "Get video thumbnails from a YouTube URL."
   },
   {
     "slug": "video-metadata-viewer",
     "name": "Video Metadata Viewer",
-    "category": "Video",
-    "desc": "View video duration, size, and resolution."
+    "category": "Media",
+    "icon": "\ud83c\udfac",
+    "desc": "See duration, size, and resolution of a video."
   },
   {
     "slug": "video-thumbnail-capture",
     "name": "Video Thumbnail Capture",
-    "category": "Video",
-    "desc": "Capture a frame from uploaded video."
+    "category": "Media",
+    "icon": "\ud83d\uddbc\ufe0f",
+    "desc": "Capture a frame from an uploaded video."
+  },
+  {
+    "slug": "pdf-page-counter",
+    "name": "PDF Page Counter",
+    "category": "PDF",
+    "icon": "\ud83d\udcc4",
+    "desc": "Upload a PDF and count the total pages."
+  },
+  {
+    "slug": "pdf-merge",
+    "name": "PDF Merge",
+    "category": "PDF",
+    "icon": "\ud83e\uddf7",
+    "desc": "Merge multiple PDF files into one."
+  },
+  {
+    "slug": "pdf-split",
+    "name": "PDF Split",
+    "category": "PDF",
+    "icon": "\ud83d\udcda",
+    "desc": "Extract selected PDF pages into a new file."
+  },
+  {
+    "slug": "docx-text-extractor",
+    "name": "DOCX Text Extractor",
+    "category": "Document",
+    "icon": "\ud83d\udcd8",
+    "desc": "Extract readable text from a DOCX file."
+  },
+  {
+    "slug": "invoice-generator",
+    "name": "Invoice Generator",
+    "category": "Business",
+    "icon": "\ud83e\uddfe",
+    "desc": "Generate a simple printable invoice."
+  },
+  {
+    "slug": "loan-calculator",
+    "name": "Loan Calculator",
+    "category": "Calculator",
+    "icon": "\ud83d\udcb3",
+    "desc": "Estimate monthly repayments."
   }
 ]
