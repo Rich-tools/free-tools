@@ -1,0 +1,28 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Image Compressor</title>
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<div class="container">
+<div class="toolbox">
+<h2>Image Compressor</h2>
+<input type="file" id="file"><button onclick="run()">Compress</button><canvas id="c"></canvas>
+<div id="result" class="result"></div>
+</div>
+</div>
+<script>
+let img;
+file.onchange=e=>{img=new Image();img.src=URL.createObjectURL(e.target.files[0]);}
+function run(){
+let canvas=document.getElementById("c");
+canvas.width=img.width;canvas.height=img.height;
+canvas.getContext("2d").drawImage(img,0,0);
+result.innerText="Compressed preview ready";
+}
+</script>
+</body>
+</html>

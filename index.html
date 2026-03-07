@@ -1,103 +1,45 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SmartTools | Better Free Online Tools</title>
-<meta name="description" content="SmartTools is a better-looking free online toolbox for text, PDF, document, image, media, developer and calculator tasks.">
+<title>SmartTools</title>
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<section class="hero">
-  <div class="wrap">
-    <nav class="nav">
-      <div class="brand"><div class="logo">S</div><span>SmartTools</span></div>
-      <div class="navlinks">
-        <a href="#tools">Tools</a>
-        <a href="#features">Features</a>
-      </div>
-    </nav>
-    <div class="hero-grid">
-      <div>
-        <span class="badge">More useful than plain basic tools</span>
-        <h1>Better pages, better buttons, better-looking tools.</h1>
-        <p>This version focuses on tools people actually use often: QR, passwords, images, YouTube thumbnails, PDF helpers, DOCX extraction, invoice creation and media utilities.</p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="#tools">Explore Tools</a>
-          <a class="btn btn-ghost" href="#features">See What Changed</a>
-        </div>
-      </div>
-      <div class="info-card">
-        <div class="metric-grid">
-          <div class="metric"><strong>18</strong><span>Higher-value tools</span></div>
-          <div class="metric"><strong>7</strong><span>Categories</span></div>
-          <div class="metric"><strong>Search</strong><span>Homepage filtering</span></div>
-          <div class="metric"><strong>Polished</strong><span>Cleaner UI and actions</span></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
-<section class="section" id="tools">
-  <div class="search-shell">
-    <input id="searchInput" class="search" placeholder="Search tools like: image compressor, youtube thumbnail, pdf merge..." oninput="applyFilters(document.querySelector('.tab.active')?.dataset.cat || 'All')">
-    <div class="tabs">
-      <span class="tab active" data-cat="All" onclick="applyFilters('All')">All</span>
-      <span class="tab" data-cat="Text" onclick="applyFilters('Text')">Text</span>
-      <span class="tab" data-cat="Utility" onclick="applyFilters('Utility')">Utility</span>
-      <span class="tab" data-cat="Developer" onclick="applyFilters('Developer')">Developer</span>
-      <span class="tab" data-cat="Image" onclick="applyFilters('Image')">Image</span>
-      <span class="tab" data-cat="Media" onclick="applyFilters('Media')">Media</span>
-      <span class="tab" data-cat="PDF" onclick="applyFilters('PDF')">PDF</span>
-      <span class="tab" data-cat="Document" onclick="applyFilters('Document')">Document</span>
-      <span class="tab" data-cat="Business" onclick="applyFilters('Business')">Business</span>
-      <span class="tab" data-cat="Calculator" onclick="applyFilters('Calculator')">Calculator</span>
-    </div>
-  </div>
+<header>
+<h1>SmartTools</h1>
+<p>All the tools you need to work with files online</p>
+</header>
 
-  <div class="head">
-    <div>
-      <h2>Browse SmartTools</h2>
-      <p><span id="count">0</span> tools available in this polished build.</p>
-    </div>
-  </div>
-  <div id="toolsGrid" class="grid"></div>
-</section>
+<div class="container">
 
-<section class="section" id="features">
-  <div class="head">
-    <div>
-      <h2>What is improved here</h2>
-      <p>The goal is to make it feel less like a test project and more like a real product.</p>
-    </div>
-  </div>
-  <div class="feature-grid">
-    <div class="feature">
-      <div class="icon">✨</div>
-      <h3>Cleaner visual system</h3>
-      <p>Better hero section, buttons, cards, spacing, and more useful categories.</p>
-    </div>
-    <div class="feature">
-      <div class="icon">🛠️</div>
-      <h3>Higher-value tools</h3>
-      <p>Added safer, more attractive tools like YouTube thumbnail, PDF helpers, DOCX extraction and invoice generation.</p>
-    </div>
-    <div class="feature">
-      <div class="icon">📈</div>
-      <h3>Better growth direction</h3>
-      <p>This set is more promising for real users than plain simple text tools alone.</p>
-    </div>
-  </div>
-</section>
+<h2 class="section-title">PDF Tools</h2>
+<div class="grid">
+<div class="card"><h3>Merge PDF</h3><a class="open" href="tools/pdf/merge.html">Open</a></div>
+<div class="card"><h3>Split PDF</h3><a class="open" href="tools/pdf/split.html">Open</a></div>
+<div class="card"><h3>PDF Page Counter</h3><a class="open" href="tools/pdf/page-counter.html">Open</a></div>
+</div>
 
-<footer class="footer">
-  <div class="footer-inner">
-    <strong>SmartTools</strong><br>
-    Designed to look more like a real product, not just a test layout.
-  </div>
+<h2 class="section-title">Image Tools</h2>
+<div class="grid">
+<div class="card"><h3>Image Compressor</h3><a class="open" href="tools/image/compress.html">Open</a></div>
+<div class="card"><h3>Image Resizer</h3><a class="open" href="tools/image/resize.html">Open</a></div>
+</div>
+
+<h2 class="section-title">Text Tools</h2>
+<div class="grid">
+<div class="card"><h3>Word Counter</h3><a class="open" href="tools/text/word-counter.html">Open</a></div>
+<div class="card"><h3>Password Generator</h3><a class="open" href="tools/text/password.html">Open</a></div>
+</div>
+
+</div>
+
+<footer>
+<a href="pages/about.html">About</a> |
+<a href="pages/contact.html">Contact</a>
 </footer>
 
-<script src="js/main.js"></script>
 </body>
 </html>
