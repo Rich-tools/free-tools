@@ -7,31 +7,15 @@
 <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-
 <div class="container">
 <div class="toolbox">
-
 <h2>Word Counter</h2>
-
-
-<textarea id="t"></textarea>
-<button onclick="run()">Count</button>
-<div id="r" class="result"></div>
-<script>
-function run(){
-let t=document.getElementById('t').value;
-let w=t.trim().split(/\s+/).filter(x=>x).length;
-let c=t.length;
-document.getElementById('r').innerText="Words: "+w+" | Characters: "+c;
-}
-</script>
-
-
-<br>
-<a href="../index.html">Back</a>
-
+<p>Count words and characters</p>
+<input placeholder="Input here">
+<button onclick="alert('Tool running')">Run Tool</button>
+<div class="result">Result area</div>
+<br><a href="../index.html">Back</a>
 </div>
 </div>
-
 </body>
 </html>

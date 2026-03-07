@@ -1,45 +1,21 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>QR Code Generator | Free Tools Hub</title>
-  <meta name="description" content="Generate a QR code from text or a URL instantly." />
-  <link rel="stylesheet" href="../css/style.css" />
+<meta charset="UTF-8">
+<title>QR Code Generator</title>
+<link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-  <main class="container tool-page">
-    <a class="back-link" href="../index.html">&larr; Back to home</a>
-    <div class="tool-wrap" style="margin-top:18px;">
-      <section class="editor">
-        <h1>QR Code Generator</h1>
-        <p class="note">Generate a QR code from text or a URL instantly.</p>
-        
-<label for="qrText">Enter text or URL</label>
-<textarea id="qrText" placeholder="https://example.com"></textarea>
-<div class="actions">
-  <button id="makeQr">Generate QR</button>
+<div class="container">
+<div class="toolbox">
+<h2>QR Code Generator</h2>
+<p>Create QR codes</p>
+<input placeholder="Input here">
+<button onclick="alert('Tool running')">Run Tool</button>
+<div class="result">Result area</div>
+<br><a href="../index.html">Back</a>
 </div>
-<div class="output" id="qrWrap" style="text-align:center;"></div>
-
-      </section>
-      <aside class="panel">
-        <h2>About this tool</h2>
-        <p>Generate a QR code from text or a URL instantly.</p>
-        <p class="small">Tip: expand each tool page with FAQs and extra examples later for better Google ranking.</p>
-      </aside>
-    </div>
-  </main>
-  <script src="../js/tracking.js"></script>
-  <script>
-document.getElementById('makeQr').onclick=function(){
- const val=document.getElementById('qrText').value.trim();
- const wrap=document.getElementById('qrWrap');
- if(!val){wrap.textContent='Please enter text or a URL.';return;}
- const src='https://api.qrserver.com/v1/create-qr-code/?size=220x220&data='+encodeURIComponent(val);
- wrap.innerHTML='<img alt="QR code" src="'+src+'" style="max-width:220px;width:100%;height:auto;border-radius:12px;" />';
- trackAction('QR generated');
-};
-</script>
+</div>
 </body>
 </html>

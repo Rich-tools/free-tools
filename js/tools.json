@@ -5,34 +5,14 @@
     "desc": "Count words and characters"
   },
   {
-    "slug": "case-converter",
-    "name": "Case Converter",
-    "desc": "Uppercase / lowercase text"
-  },
-  {
-    "slug": "remove-spaces",
-    "name": "Remove Extra Spaces",
-    "desc": "Clean text spacing"
-  },
-  {
-    "slug": "slug-generator",
-    "name": "Slug Generator",
-    "desc": "SEO URL slugs"
-  },
-  {
     "slug": "password-generator",
     "name": "Password Generator",
     "desc": "Generate strong passwords"
   },
   {
-    "slug": "qr-generator",
+    "slug": "qr-code-generator",
     "name": "QR Code Generator",
-    "desc": "Generate QR code"
-  },
-  {
-    "slug": "random-number",
-    "name": "Random Number",
-    "desc": "Random number generator"
+    "desc": "Create QR codes"
   },
   {
     "slug": "json-formatter",
@@ -40,9 +20,9 @@
     "desc": "Beautify JSON"
   },
   {
-    "slug": "base64",
+    "slug": "base64-encoder",
     "name": "Base64 Encoder",
-    "desc": "Encode text Base64"
+    "desc": "Encode text to Base64"
   },
   {
     "slug": "url-encoder",
@@ -57,27 +37,22 @@
   {
     "slug": "bmi-calculator",
     "name": "BMI Calculator",
-    "desc": "Body mass index"
+    "desc": "Body mass index tool"
   },
   {
     "slug": "percentage-calculator",
     "name": "Percentage Calculator",
-    "desc": "Calculate percent"
+    "desc": "Calculate percentages"
   },
   {
     "slug": "discount-calculator",
     "name": "Discount Calculator",
-    "desc": "Sale price tool"
+    "desc": "Sale discount calculator"
   },
   {
     "slug": "loan-calculator",
     "name": "Loan Calculator",
-    "desc": "Monthly payment"
-  },
-  {
-    "slug": "image-base64",
-    "name": "Image \u2192 Base64",
-    "desc": "Convert image to Base64"
+    "desc": "Estimate loan payments"
   },
   {
     "slug": "image-resizer",
@@ -87,12 +62,17 @@
   {
     "slug": "image-compressor",
     "name": "Image Compressor",
-    "desc": "Reduce image size"
+    "desc": "Compress images"
   },
   {
     "slug": "image-cropper",
     "name": "Image Cropper",
-    "desc": "Crop image center"
+    "desc": "Crop images"
+  },
+  {
+    "slug": "image-base64",
+    "name": "Image to Base64",
+    "desc": "Convert image to base64"
   },
   {
     "slug": "color-picker",
@@ -102,12 +82,12 @@
   {
     "slug": "audio-player",
     "name": "Audio Player",
-    "desc": "Preview audio"
+    "desc": "Preview audio files"
   },
   {
     "slug": "audio-info",
     "name": "Audio Metadata",
-    "desc": "Audio file info"
+    "desc": "See audio info"
   },
   {
     "slug": "tone-generator",
@@ -117,11 +97,31 @@
   {
     "slug": "video-info",
     "name": "Video Metadata",
-    "desc": "Video info"
+    "desc": "View video details"
   },
   {
     "slug": "video-thumbnail",
     "name": "Video Thumbnail",
-    "desc": "Capture frame"
+    "desc": "Capture frame from video"
+  },
+  {
+    "slug": "random-number",
+    "name": "Random Number Generator",
+    "desc": "Generate random numbers"
+  },
+  {
+    "slug": "slug-generator",
+    "name": "Slug Generator",
+    "desc": "Generate SEO slugs"
+  },
+  {
+    "slug": "remove-spaces",
+    "name": "Remove Extra Spaces",
+    "desc": "Clean text spacing"
+  },
+  {
+    "slug": "case-converter",
+    "name": "Case Converter",
+    "desc": "Convert text case"
   }
 ]
