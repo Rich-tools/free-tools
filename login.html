@@ -74,29 +74,36 @@ background:#1d4ed8;
 <script src="supabase-config.js"></script>
 
 <script>
+async function login() {
+  const email = document.getElementById("email").value.trim();
+  const password = document.getElementById("password").value;
+  const msg = document.getElementById("msg");
 
-async function login(){
+  msg.style.color = "red";
+  msg.innerText = "Logging in...";
 
-let email=document.getElementById("email").value
-let password=document.getElementById("password").value
+  try {
+    const { data, error } = await supabaseClient.auth.signInWithPassword({
+      email,
+      password
+    });
 
-const { data, error } = await supabaseClient.auth.signInWithPassword({
-email: email,
-password: password
-})
+    if (error) {
+      msg.innerText = error.message;
+      console.error("LOGIN ERROR:", error);
+      return;
+    }
 
-if(error){
+    msg.style.color = "green";
+    msg.innerText = "Login successful...";
+    console.log("LOGIN DATA:", data);
 
-document.getElementById("msg").innerText="Login failed"
-
-}else{
-
-window.location.href="admin.html"
-
+    window.location.href = "admin.html";
+  } catch (err) {
+    msg.innerText = err.message || "Something went wrong";
+    console.error("LOGIN CATCH:", err);
+  }
 }
-
-}
-
 </script>
 
 </body>
