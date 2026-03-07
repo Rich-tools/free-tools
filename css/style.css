@@ -1,16 +1,20 @@
 
 body{font-family:Inter,Arial;margin:0;background:#f6f8fc;color:#111}
-header{background:#2563eb;color:white;padding:60px 20px;text-align:center}
-header h1{margin:0;font-size:38px}
+header{background:#2563eb;color:#fff;padding:70px 20px;text-align:center}
+header h1{margin:0;font-size:40px}
+header p{opacity:.9}
 .container{max-width:1100px;margin:auto;padding:30px 20px}
-.section-title{font-size:26px;margin:30px 0 15px}
+.section-title{font-size:26px;margin:35px 0 15px}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:18px}
-.card{background:white;padding:18px;border-radius:14px;box-shadow:0 8px 20px rgba(0,0,0,.08)}
+.card{background:#fff;padding:20px;border-radius:14px;box-shadow:0 8px 20px rgba(0,0,0,.08);transition:.2s}
+.card:hover{transform:translateY(-4px)}
 .card h3{margin:0 0 6px}
-.open{display:inline-block;margin-top:10px;padding:10px 14px;background:#2563eb;color:white;border-radius:8px}
-.toolbox{max-width:900px;margin:auto;background:white;padding:30px;border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,.08)}
-.upload{border:2px dashed #94a3b8;padding:40px;text-align:center;border-radius:12px;margin:20px 0}
+.open{display:inline-block;margin-top:10px;padding:10px 14px;background:#2563eb;color:#fff;border-radius:8px}
+.toolbox{max-width:900px;margin:auto;background:#fff;padding:30px;border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,.08)}
+.upload{border:2px dashed #94a3b8;padding:40px;text-align:center;border-radius:12px;margin:20px 0;background:#fafcff}
 input,textarea{width:100%;padding:12px;border-radius:8px;border:1px solid #ccc;margin-top:10px}
 button{padding:10px 16px;border:none;background:#2563eb;color:white;border-radius:8px;margin-top:12px;cursor:pointer}
+button.secondary{background:#475569}
 .result{margin-top:14px;background:#eef2ff;padding:12px;border-radius:8px}
+canvas{max-width:100%;margin-top:15px}
 footer{background:#1e293b;color:#cbd5e1;text-align:center;padding:20px;margin-top:40px}

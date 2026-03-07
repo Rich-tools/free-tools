@@ -5,6 +5,7 @@
 <meta charset="UTF-8">
 <title>Word Counter</title>
 <link rel="stylesheet" href="../../css/style.css">
+
 </head>
 <body>
 <div class="container">
@@ -14,6 +15,12 @@
 <div id="result" class="result"></div>
 </div>
 </div>
-<script>function run(){let t=document.getElementById("t").value;let w=t.trim()?t.trim().split(/\s+/).length:0;result.innerText="Words: "+w+" Characters: "+t.length;}</script>
+<script>
+function run(){
+let t=document.getElementById("t").value;
+let w=t.trim()?t.trim().split(/\s+/).length:0;
+result.innerText="Words: "+w+" | Characters: "+t.length;
+}
+</script>
 </body>
 </html>

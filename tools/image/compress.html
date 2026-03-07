@@ -5,6 +5,7 @@
 <meta charset="UTF-8">
 <title>Image Compressor</title>
 <link rel="stylesheet" href="../../css/style.css">
+
 </head>
 <body>
 <div class="container">
@@ -19,7 +20,8 @@ let img;
 file.onchange=e=>{img=new Image();img.src=URL.createObjectURL(e.target.files[0]);}
 function run(){
 let canvas=document.getElementById("c");
-canvas.width=img.width;canvas.height=img.height;
+canvas.width=img.width;
+canvas.height=img.height;
 canvas.getContext("2d").drawImage(img,0,0);
 result.innerText="Compressed preview ready";
 }

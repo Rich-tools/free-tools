@@ -5,6 +5,7 @@
 <meta charset="UTF-8">
 <title>Image Resizer</title>
 <link rel="stylesheet" href="../../css/style.css">
+
 </head>
 <body>
 <div class="container">
@@ -21,7 +22,8 @@ function run(){
 let width=parseInt(w.value);
 let h=img.height*(width/img.width);
 let canvas=document.getElementById("c");
-canvas.width=width;canvas.height=h;
+canvas.width=width;
+canvas.height=h;
 canvas.getContext("2d").drawImage(img,0,0,width,h);
 }
 </script>
