@@ -1,0 +1,52 @@
+[
+  {
+    "name": "Word Counter",
+    "slug": "word-counter",
+    "desc": "Count words and characters"
+  },
+  {
+    "name": "Password Generator",
+    "slug": "password-generator",
+    "desc": "Generate secure passwords"
+  },
+  {
+    "name": "QR Code Generator",
+    "slug": "qr-generator",
+    "desc": "Create QR codes"
+  },
+  {
+    "name": "JSON Formatter",
+    "slug": "json-formatter",
+    "desc": "Format JSON"
+  },
+  {
+    "name": "Base64 Encoder",
+    "slug": "base64",
+    "desc": "Encode text Base64"
+  },
+  {
+    "name": "Image to Base64",
+    "slug": "image-base64",
+    "desc": "Convert image to base64"
+  },
+  {
+    "name": "Image Resizer",
+    "slug": "image-resizer",
+    "desc": "Resize images"
+  },
+  {
+    "name": "Audio Player",
+    "slug": "audio-player",
+    "desc": "Preview audio files"
+  },
+  {
+    "name": "Video Metadata",
+    "slug": "video-metadata",
+    "desc": "View video info"
+  },
+  {
+    "name": "Video Thumbnail",
+    "slug": "video-thumbnail",
+    "desc": "Capture frame from video"
+  }
+]

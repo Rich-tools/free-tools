@@ -1,0 +1,26 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Audio Player</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<div class="container">
+<div class="toolbox">
+<h2>Audio Player</h2>
+
+<input type='file' id='f'>
+<audio id='a' controls></audio>
+<script>
+document.getElementById('f').onchange=e=>{
+document.getElementById('a').src=URL.createObjectURL(e.target.files[0]);
+}
+</script>
+
+<br><a href="../index.html">Back</a>
+</div>
+</div>
+</body>
+</html>

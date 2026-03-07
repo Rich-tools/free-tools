@@ -1,0 +1,28 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Image to Base64</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<div class="container">
+<div class="toolbox">
+<h2>Image to Base64</h2>
+
+<input type='file' id='f'>
+<div id='r' class='result'></div>
+<script>
+document.getElementById('f').onchange=e=>{
+let reader=new FileReader();
+reader.onload=()=>{document.getElementById('r').innerText=reader.result;}
+reader.readAsDataURL(e.target.files[0]);
+};
+</script>
+
+<br><a href="../index.html">Back</a>
+</div>
+</div>
+</body>
+</html>

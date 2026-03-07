@@ -1,152 +1,21 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Free Tools Hub | 15 Powerful Online Tools</title>
-  <meta name="description" content="Free online tools for text, developers, SEO, and calculators. Fast, simple, and easy to use." />
-  <link rel="stylesheet" href="css/style.css" />
+<meta charset="UTF-8">
+<title>Free Tools Hub</title>
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <header class="site-header">
-    <div class="container">
-      <nav class="nav">
-        <a class="brand" href="index.html">Free Tools Hub</a>
-        <div class="nav-links">
-          <a href="#tools">Tools</a>
-          <a href="admin.html">Tracking</a>
-        </div>
-      </nav>
-      <div class="hero">
-        <h1>15 powerful free tools in one website</h1>
-        <p>Fast tools for text, developers, SEO, and everyday calculations. This starter project works on GitHub Pages with only HTML, CSS, and JavaScript.</p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="#tools">Explore tools</a>
-          <a class="btn btn-secondary" href="admin.html">View tracking setup</a>
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <main class="container">
-    <section class="section" id="tools">
-      <h2 class="section-title">Popular Free Tools</h2>
-      <p class="section-subtitle">Each tool has its own page for better SEO. Search below to filter the tool list.</p>
-      <div class="card" style="margin-bottom:22px;">
-        <label for="toolSearch">Search tools</label>
-        <input id="toolSearch" type="text" placeholder="Search by tool name or use case" />
-      </div>
-      <div class="category-badges">
-        <span class="badge">Text Tools</span>
-        <span class="badge">Developer Tools</span>
-        <span class="badge">SEO Tools</span>
-        <span class="badge">Calculators</span>
-      </div>
-      <div class="grid tools-grid">
-        <article class="card tool-card">
-          <h3>Word Counter</h3>
-          <p>Count words, characters, sentences, and paragraphs for essays, blogs, and documents.</p>
-          <a class="btn" href="tools/word-counter.html">Open tool</a>
-        </article>
-        <article class="card tool-card">
-          <h3>Password Generator</h3>
-          <p>Generate secure passwords using custom length and character options.</p>
-          <a class="btn" href="tools/password-generator.html">Open tool</a>
-        </article>
-        <article class="card tool-card">
-          <h3>QR Code Generator</h3>
-          <p>Turn text or URLs into QR codes instantly.</p>
-          <a class="btn" href="tools/qr-code-generator.html">Open tool</a>
-        </article>
-        <article class="card tool-card">
-          <h3>JSON Formatter</h3>
-          <p>Beautify and validate JSON for easier reading.</p>
-          <a class="btn" href="tools/json-formatter.html">Open tool</a>
-        </article>
-        <article class="card tool-card">
-          <h3>Base64 Encoder / Decoder</h3>
-          <p>Encode plain text to Base64 or decode Base64 to plain text.</p>
-          <a class="btn" href="tools/base64-encoder-decoder.html">Open tool</a>
-        </article>
-        <article class="card tool-card">
-          <h3>URL Encoder / Decoder</h3>
-          <p>Encode special URL characters or decode encoded strings.</p>
-          <a class="btn" href="tools/url-encoder-decoder.html">Open tool</a>
-        </article>
-        <article class="card tool-card">
-          <h3>Case Converter</h3>
-          <p>Convert text to uppercase, lowercase, title case, or sentence case.</p>
-          <a class="btn" href="tools/case-converter.html">Open tool</a>
-        </article>
-        <article class="card tool-card">
-          <h3>Remove Extra Spaces</h3>
-          <p>Clean messy text by removing extra spaces and blank lines.</p>
-          <a class="btn" href="tools/remove-extra-spaces.html">Open tool</a>
-        </article>
-        <article class="card tool-card">
-          <h3>Slug Generator</h3>
-          <p>Create clean SEO-friendly slugs from titles and phrases.</p>
-          <a class="btn" href="tools/slug-generator.html">Open tool</a>
-        </article>
-        <article class="card tool-card">
-          <h3>Age Calculator</h3>
-          <p>Calculate age in years, months, and days from a birth date.</p>
-          <a class="btn" href="tools/age-calculator.html">Open tool</a>
-        </article>
-        <article class="card tool-card">
-          <h3>BMI Calculator</h3>
-          <p>Calculate body mass index and view category.</p>
-          <a class="btn" href="tools/bmi-calculator.html">Open tool</a>
-        </article>
-        <article class="card tool-card">
-          <h3>Percentage Calculator</h3>
-          <p>Solve common percentage calculations quickly.</p>
-          <a class="btn" href="tools/percentage-calculator.html">Open tool</a>
-        </article>
-        <article class="card tool-card">
-          <h3>Random Number Generator</h3>
-          <p>Generate random numbers within a selected range.</p>
-          <a class="btn" href="tools/random-number-generator.html">Open tool</a>
-        </article>
-        <article class="card tool-card">
-          <h3>Meta Tag Generator</h3>
-          <p>Generate basic SEO meta tags for a web page.</p>
-          <a class="btn" href="tools/meta-tag-generator.html">Open tool</a>
-        </article>
-        <article class="card tool-card">
-          <h3>Keyword Density Checker</h3>
-          <p>Check how often a keyword appears in text.</p>
-          <a class="btn" href="tools/keyword-density-checker.html">Open tool</a>
-        </article>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="grid" style="grid-template-columns:1fr 1fr;gap:20px;">
-        <div class="card about">
-          <h2>How tracking works</h2>
-          <p>This package includes <strong>simple built-in local tracking</strong> using <span class="code">localStorage</span> so you can test page views and tool clicks instantly on your own browser.</p>
-          <p>For real visitors across all devices, connect an external analytics service like Google Analytics or Microsoft Clarity by pasting your tracking script into the site.</p>
-          <a class="btn" href="admin.html">Open tracking dashboard</a>
-        </div>
-        <div class="card seo-note">
-          <h2>Good for SEO</h2>
-          <p>Every tool has a dedicated page, title, description, and clear content structure. That gives you a better chance to rank for specific keywords like “word counter tool” or “BMI calculator”.</p>
-          <p class="small">Tip: later you can add more paragraphs, FAQs, and internal links on each tool page to improve traffic.</p>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container">
-      <p>&copy; <span id="year"></span> Free Tools Hub. Built for GitHub Pages.</p>
-    </div>
-  </footer>
-  <script src="js/tracking.js"></script>
-  <script src="js/main.js"></script>
-  <script src="tracking.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script src="supabase-config.js"></script>
+<header>
+<h1>Free Tools Hub</h1>
+<p>Text, Image, Audio & Video Tools</p>
+</header>
+<div class="container">
+<input id="search" class="search" placeholder="Search tools..." onkeyup="searchTools()">
+<div id="tools" class="grid"></div>
+</div>
+<footer>Free Tools Hub</footer>
+<script src="js/main.js"></script>
 </body>
 </html>

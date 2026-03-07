@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Image Resizer</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<div class="container">
+<div class="toolbox">
+<h2>Image Resizer</h2>
+
+<input type='file' id='f'>
+<input id='w' placeholder='Width'>
+<button onclick='resize()'>Resize</button>
+<br><canvas id='c'></canvas>
+<script>
+function resize(){
+let file=document.getElementById('f').files[0];
+let w=parseInt(document.getElementById('w').value);
+let img=new Image();
+img.onload=function(){
+let c=document.getElementById('c');
+let ctx=c.getContext('2d');
+let ratio=w/img.width;
+c.width=w;c.height=img.height*ratio;
+ctx.drawImage(img,0,0,c.width,c.height);
+}
+img.src=URL.createObjectURL(file);
+}
+</script>
+
+<br><a href="../index.html">Back</a>
+</div>
+</div>
+</body>
+</html>

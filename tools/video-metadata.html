@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Video Metadata</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<div class="container">
+<div class="toolbox">
+<h2>Video Metadata</h2>
+
+<input type='file' id='f'>
+<div id='r' class='result'></div>
+<script>
+document.getElementById('f').onchange=e=>{
+let v=document.createElement('video');
+v.onloadedmetadata=function(){
+document.getElementById('r').innerText="Duration: "+v.duration+" seconds";
+};
+v.src=URL.createObjectURL(e.target.files[0]);
+};
+</script>
+
+<br><a href="../index.html">Back</a>
+</div>
+</div>
+</body>
+</html>

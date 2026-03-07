@@ -1,0 +1,34 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Video Thumbnail</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<div class="container">
+<div class="toolbox">
+<h2>Video Thumbnail</h2>
+
+<input type='file' id='f'>
+<canvas id='c'></canvas>
+<script>
+document.getElementById('f').onchange=e=>{
+let v=document.createElement('video');
+v.src=URL.createObjectURL(e.target.files[0]);
+v.currentTime=1;
+v.onloadeddata=function(){
+let c=document.getElementById('c');
+c.width=320;c.height=180;
+let ctx=c.getContext('2d');
+ctx.drawImage(v,0,0,320,180);
+};
+};
+</script>
+
+<br><a href="../index.html">Back</a>
+</div>
+</div>
+</body>
+</html>

@@ -1,65 +1,30 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Word Counter | Free Tools Hub</title>
-  <meta name="description" content="Count words, characters, sentences, and paragraphs instantly." />
-  <link rel="stylesheet" href="../css/style.css" />
+<meta charset="UTF-8">
+<title>Word Counter</title>
+<link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-  <main class="container tool-page">
-    <a class="back-link" href="../index.html">&larr; Back to home</a>
-    <div class="tool-wrap" style="margin-top:18px;">
-      <section class="editor">
-        <h1>Word Counter</h1>
-        <p class="note">Count words, characters, sentences, and paragraphs instantly.</p>
-        
-<label for="text">Enter text</label>
-<textarea id="text" placeholder="Paste or type text here..."></textarea>
-<div class="actions">
-  <button id="countBtn">Count text</button>
-  <button class="alt" id="clearBtn">Clear</button>
-</div>
-<div class="stats" style="margin-top:18px;">
-  <div class="stat"><strong id="words">0</strong><span>Words</span></div>
-  <div class="stat"><strong id="characters">0</strong><span>Characters</span></div>
-  <div class="stat"><strong id="sentences">0</strong><span>Sentences</span></div>
-</div>
-<div class="stats" style="margin-top:12px;">
-  <div class="stat"><strong id="paragraphs">0</strong><span>Paragraphs</span></div>
-  <div class="stat"><strong id="reading">0 sec</strong><span>Read time</span></div>
-  <div class="stat"><strong id="speaking">0 sec</strong><span>Speak time</span></div>
-</div>
+<div class="container">
+<div class="toolbox">
+<h2>Word Counter</h2>
 
-      </section>
-      <aside class="panel">
-        <h2>About this tool</h2>
-        <p>Count words, characters, sentences, and paragraphs instantly.</p>
-        <p class="small">Tip: expand each tool page with FAQs and extra examples later for better Google ranking.</p>
-      </aside>
-    </div>
-  </main>
-  <script src="../js/tracking.js"></script>
-  <script>
-function update(){
- const text=document.getElementById('text').value.trim();
- const words=text?text.split(/\s+/).length:0;
- const chars=document.getElementById('text').value.length;
- const sentences=text?text.split(/[.!?]+/).filter(Boolean).length:0;
- const paragraphs=text?text.split(/
-+/).filter(t=>t.trim()).length:0;
- document.getElementById('words').textContent=words;
- document.getElementById('characters').textContent=chars;
- document.getElementById('sentences').textContent=sentences;
- document.getElementById('paragraphs').textContent=paragraphs;
- document.getElementById('reading').textContent=Math.ceil(words/200*60||0)+' sec';
- document.getElementById('speaking').textContent=Math.ceil(words/130*60||0)+' sec';
- trackAction('Word Counter used');
+<textarea id='t'></textarea>
+<button onclick='run()'>Count</button>
+<div id='r' class='result'></div>
+<script>
+function run(){
+let t=document.getElementById('t').value;
+let w=t.trim().split(/\s+/).filter(x=>x).length;
+let c=t.length;
+document.getElementById('r').innerText="Words: "+w+" | Characters: "+c;
 }
-document.getElementById('countBtn').onclick=update;
-document.getElementById('clearBtn').onclick=function(){document.getElementById('text').value='';update();};
-document.getElementById('text').addEventListener('input', update);
 </script>
+
+<br><a href="../index.html">Back</a>
+</div>
+</div>
 </body>
 </html>

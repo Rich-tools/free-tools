@@ -3,23 +3,21 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>JSON Formatter</title>
+<title>Base64 Encoder</title>
 <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
 <div class="container">
 <div class="toolbox">
-<h2>JSON Formatter</h2>
+<h2>Base64 Encoder</h2>
 
 <textarea id='t'></textarea>
-<button onclick='run()'>Format</button>
-<pre id='r' class='result'></pre>
+<button onclick='run()'>Encode</button>
+<div id='r' class='result'></div>
 <script>
 function run(){
-try{
-let obj=JSON.parse(document.getElementById('t').value);
-document.getElementById('r').innerText=JSON.stringify(obj,null,2);
-}catch(e){alert("Invalid JSON");}
+let t=document.getElementById('t').value;
+document.getElementById('r').innerText=btoa(t);
 }
 </script>
 

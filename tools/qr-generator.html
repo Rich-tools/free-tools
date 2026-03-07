@@ -1,0 +1,28 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>QR Code Generator</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<div class="container">
+<div class="toolbox">
+<h2>QR Code Generator</h2>
+
+<input id='t' placeholder='Enter text'>
+<button onclick='run()'>Generate</button>
+<div id='r'></div>
+<script>
+function run(){
+let v=document.getElementById('t').value;
+document.getElementById('r').innerHTML=`<img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(v)}">`;
+}
+</script>
+
+<br><a href="../index.html">Back</a>
+</div>
+</div>
+</body>
+</html>
