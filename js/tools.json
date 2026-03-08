@@ -4,174 +4,224 @@
     "name": "Word Counter",
     "cat": "Text",
     "icon": "\ud83d\udcdd",
-    "popular": true
+    "popular": true,
+    "title": "Word Counter \u2013 Count Words and Characters Online Free",
+    "desc": "Free online word counter tool to count words, characters, sentences and paragraphs instantly."
   },
   {
     "slug": "case-converter",
     "name": "Case Converter",
     "cat": "Text",
     "icon": "\ud83d\udd24",
-    "popular": false
+    "popular": false,
+    "title": "Case Converter \u2013 Uppercase Lowercase Title Case Tool",
+    "desc": "Convert text to uppercase, lowercase, title case and sentence case with this free tool."
   },
   {
     "slug": "slug-generator",
     "name": "Slug Generator",
     "cat": "Text",
     "icon": "\ud83d\udd17",
-    "popular": false
+    "popular": false,
+    "title": "Slug Generator \u2013 Create SEO Friendly URLs Online",
+    "desc": "Create SEO friendly slugs from blog titles and page headings online for free."
   },
   {
     "slug": "password-generator",
     "name": "Password Generator",
     "cat": "Utility",
     "icon": "\ud83d\udd10",
-    "popular": true
+    "popular": true,
+    "title": "Password Generator \u2013 Generate Strong Passwords Free",
+    "desc": "Generate strong secure passwords online for free using SmartTools."
   },
   {
     "slug": "qr-code-generator",
     "name": "QR Code Generator",
     "cat": "Utility",
     "icon": "\ud83d\udcf1",
-    "popular": true
+    "popular": true,
+    "title": "QR Code Generator \u2013 Create QR Codes Online Free",
+    "desc": "Create QR codes online for free from any text, link or URL."
   },
   {
     "slug": "random-number-generator",
     "name": "Random Number Generator",
     "cat": "Utility",
     "icon": "\ud83c\udfb2",
-    "popular": false
+    "popular": false,
+    "title": "Random Number Generator \u2013 Generate Random Numbers Online",
+    "desc": "Generate random numbers online within any range."
   },
   {
     "slug": "json-formatter",
     "name": "JSON Formatter",
     "cat": "Developer",
     "icon": "\ud83e\udde9",
-    "popular": true
+    "popular": true,
+    "title": "JSON Formatter \u2013 Beautify and Validate JSON Online",
+    "desc": "Beautify and validate JSON online for free with SmartTools."
   },
   {
     "slug": "base64-encoder-decoder",
     "name": "Base64 Encoder Decoder",
     "cat": "Developer",
     "icon": "\ud83e\uddec",
-    "popular": false
+    "popular": false,
+    "title": "Base64 Encoder Decoder \u2013 Encode and Decode Base64",
+    "desc": "Encode and decode Base64 text online for free."
   },
   {
     "slug": "url-encoder-decoder",
     "name": "URL Encoder Decoder",
     "cat": "Developer",
     "icon": "\ud83c\udf10",
-    "popular": false
+    "popular": false,
+    "title": "URL Encoder Decoder \u2013 Encode and Decode URLs Online",
+    "desc": "Encode and decode URLs online quickly and free."
   },
   {
     "slug": "meta-tag-generator",
     "name": "Meta Tag Generator",
     "cat": "SEO",
     "icon": "\ud83c\udff7\ufe0f",
-    "popular": false
+    "popular": false,
+    "title": "Meta Tag Generator \u2013 Generate SEO Meta Tags Free",
+    "desc": "Generate SEO title, description and keywords tags online for free."
   },
   {
     "slug": "age-calculator",
     "name": "Age Calculator",
     "cat": "Calculator",
     "icon": "\ud83c\udf82",
-    "popular": false
+    "popular": false,
+    "title": "Age Calculator \u2013 Calculate Age Online Free",
+    "desc": "Calculate age online from date of birth using SmartTools."
   },
   {
     "slug": "bmi-calculator",
     "name": "BMI Calculator",
     "cat": "Calculator",
     "icon": "\u2696\ufe0f",
-    "popular": false
+    "popular": false,
+    "title": "BMI Calculator \u2013 Body Mass Index Calculator Online",
+    "desc": "Body mass index calculator online for free."
   },
   {
     "slug": "loan-calculator",
     "name": "Loan Calculator",
     "cat": "Calculator",
     "icon": "\ud83d\udcb3",
-    "popular": false
+    "popular": false,
+    "title": "Loan Calculator \u2013 Monthly Loan Repayment Calculator",
+    "desc": "Estimate monthly loan payments and total repayment online."
   },
   {
     "slug": "image-compressor",
     "name": "Image Compressor",
     "cat": "Image",
     "icon": "\ud83d\uddbc\ufe0f",
-    "popular": true
+    "popular": true,
+    "title": "Image Compressor \u2013 Reduce Image Size Online Free",
+    "desc": "Compress JPG and PNG images online without installing software."
   },
   {
     "slug": "image-resizer",
     "name": "Image Resizer",
     "cat": "Image",
     "icon": "\ud83d\udcd0",
-    "popular": true
+    "popular": true,
+    "title": "Image Resizer \u2013 Resize Images Online Free",
+    "desc": "Resize images online for free with SmartTools."
   },
   {
     "slug": "image-cropper",
     "name": "Image Cropper",
     "cat": "Image",
     "icon": "\u2702\ufe0f",
-    "popular": false
+    "popular": false,
+    "title": "Image Cropper \u2013 Crop Images Online Free",
+    "desc": "Crop images online and download the result for free."
   },
   {
     "slug": "color-picker-from-image",
     "name": "Color Picker From Image",
     "cat": "Image",
     "icon": "\ud83c\udfa8",
-    "popular": false
+    "popular": false,
+    "title": "Color Picker From Image \u2013 Extract HEX and RGB Colors",
+    "desc": "Extract HEX and RGB colors from images online."
   },
   {
     "slug": "youtube-thumbnail-downloader",
     "name": "YouTube Thumbnail Downloader",
     "cat": "Media",
     "icon": "\u25b6\ufe0f",
-    "popular": true
+    "popular": true,
+    "title": "YouTube Thumbnail Downloader \u2013 Download YouTube Thumbnails",
+    "desc": "Extract and download YouTube thumbnail images in high quality from public video URLs."
   },
   {
     "slug": "video-metadata-viewer",
     "name": "Video Metadata Viewer",
     "cat": "Media",
     "icon": "\ud83c\udfac",
-    "popular": false
+    "popular": false,
+    "title": "Video Metadata Viewer \u2013 Check Video Duration and Resolution",
+    "desc": "Check video duration, size and resolution online."
   },
   {
     "slug": "video-thumbnail-capture",
     "name": "Video Thumbnail Capture",
     "cat": "Media",
     "icon": "\ud83d\uddbc\ufe0f",
-    "popular": false
+    "popular": false,
+    "title": "Video Thumbnail Capture \u2013 Capture Frame From Video",
+    "desc": "Capture a frame from video and download it as an image."
   },
   {
     "slug": "pdf-merge",
     "name": "Merge PDF",
     "cat": "PDF",
     "icon": "\ud83d\udcc4",
-    "popular": true
+    "popular": true,
+    "title": "Merge PDF Online \u2013 Combine PDF Files Free",
+    "desc": "Merge multiple PDF files into one document online for free. Fast and easy PDF merge tool by SmartTools."
   },
   {
     "slug": "pdf-split",
     "name": "Split PDF",
     "cat": "PDF",
     "icon": "\ud83d\udcda",
-    "popular": true
+    "popular": true,
+    "title": "Split PDF Online \u2013 Extract PDF Pages Free",
+    "desc": "Split PDF files online and extract selected pages for free."
   },
   {
     "slug": "pdf-page-counter",
     "name": "PDF Page Counter",
     "cat": "PDF",
     "icon": "\ud83d\udd22",
-    "popular": false
+    "popular": false,
+    "title": "PDF Page Counter \u2013 Count Pages in PDF Online",
+    "desc": "Count total pages in a PDF file online for free."
   },
   {
     "slug": "docx-text-extractor",
     "name": "DOCX Text Extractor",
     "cat": "Document",
     "icon": "\ud83d\udcd8",
-    "popular": false
+    "popular": false,
+    "title": "DOCX Text Extractor \u2013 Extract Text From Word Files",
+    "desc": "Extract text from DOCX Word files online."
   },
   {
     "slug": "invoice-generator",
     "name": "Invoice Generator",
     "cat": "Business",
     "icon": "\ud83e\uddfe",
-    "popular": false
+    "popular": false,
+    "title": "Invoice Generator \u2013 Create Simple Invoices Online",
+    "desc": "Create simple invoices online for free."
   }
 ]

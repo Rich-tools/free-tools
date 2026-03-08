@@ -1,33 +1,8 @@
 
 let allTools=[];
-async function loadTools(){
- const res=await fetch('js/tools.json'); allTools=await res.json(); render(allTools);
-}
-function render(items){
- const grid=document.getElementById('toolsGrid'); grid.innerHTML='';
- items.forEach(t=>{
-  const el=document.createElement('article'); el.className='card';
-  el.innerHTML=`<div class="icon">${t.icon}</div><h3>${t.name}</h3><p>${t.cat} tool</p><div class="chips"><span class="chip">${t.cat}</span>${t.popular?'<span class="chip popular">Popular</span>':''}</div><a class="open" href="tools/${t.slug}.html">Open Tool</a>`;
-  grid.appendChild(el);
- });
- document.getElementById('count').textContent=items.length;
-}
-function applyFilters(cat='All'){
- document.querySelectorAll('.tab').forEach(t=>t.classList.toggle('active',t.dataset.cat===cat));
- const q=document.getElementById('searchInput').value.trim().toLowerCase();
- const filtered=allTools.filter(t=>{
-   const hay=(t.name+' '+t.cat+' '+t.slug).toLowerCase();
-   return (cat==='All'||t.cat===cat)&&hay.includes(q);
- });
- render(filtered);
-}
-function toggleTheme(){
- const current=document.documentElement.getAttribute('data-theme');
- const next=current==='dark'?'light':'dark';
- document.documentElement.setAttribute('data-theme',next);
- localStorage.setItem('smarttools-theme',next);
-}
-document.addEventListener('DOMContentLoaded',()=>{
- document.documentElement.setAttribute('data-theme', localStorage.getItem('smarttools-theme') || 'light');
- loadTools();
-});
+function getStats(){const opens=JSON.parse(localStorage.getItem('smarttools-opens')||'{}');const views=JSON.parse(localStorage.getItem('smarttools-views')||'{}');const totalOpens=Object.values(opens).reduce((a,b)=>a+b,0);const totalViews=Object.values(views).reduce((a,b)=>a+b,0);document.getElementById('statTools').textContent=allTools.length;document.getElementById('statViews').textContent=totalViews;document.getElementById('statOpens').textContent=totalOpens;document.getElementById('statUsers').textContent=Math.max(1,Math.ceil(totalViews/3));}
+async function loadTools(){const res=await fetch('js/tools.json');allTools=await res.json();render(allTools);getStats();}
+function render(items){const grid=document.getElementById('toolsGrid');grid.innerHTML='';items.forEach(t=>{const el=document.createElement('article');el.className='card';el.innerHTML=`<div class="icon">${t.icon}</div><h3>${t.name}</h3><p>${t.desc}</p><div class="chips"><span class="chip">${t.cat}</span>${t.popular?'<span class="chip popular">Popular</span>':''}</div><a class="open" href="tools/${t.slug}.html">Open Tool</a>`;grid.appendChild(el);});document.getElementById('count').textContent=items.length;}
+function applyFilters(cat='All'){document.querySelectorAll('.tab').forEach(t=>t.classList.toggle('active',t.dataset.cat===cat));const q=document.getElementById('searchInput').value.trim().toLowerCase();const filtered=allTools.filter(t=>{const hay=(t.name+' '+t.desc+' '+t.cat+' '+t.slug).toLowerCase();return (cat==='All'||t.cat===cat)&&hay.includes(q);});render(filtered);}
+function toggleTheme(){const current=document.documentElement.getAttribute('data-theme');const next=current==='dark'?'light':'dark';document.documentElement.setAttribute('data-theme',next);localStorage.setItem('smarttools-theme',next);}
+document.addEventListener('DOMContentLoaded',()=>{document.documentElement.setAttribute('data-theme',localStorage.getItem('smarttools-theme')||'light');loadTools();});
