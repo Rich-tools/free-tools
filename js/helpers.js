@@ -1,5 +1,5 @@
 
 function byId(id){return document.getElementById(id);}
-function copyText(value){navigator.clipboard.writeText(value||'').then(()=>alert('Copied'));}
-function downloadText(filename, content, mime='text/plain;charset=utf-8'){const blob=new Blob([content],{type:mime});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=filename;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),400);}
-function downloadCanvas(canvas, filename='image.png'){const a=document.createElement('a');a.href=canvas.toDataURL('image/png');a.download=filename;a.click();}
+function copyText(v){navigator.clipboard.writeText(v||'').then(()=>alert('Copied'));}
+function downloadText(name,c,m='text/plain;charset=utf-8'){const b=new Blob([c],{type:m});const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),500);}
+function downloadCanvas(canvas,name='image.png'){const a=document.createElement('a');a.href=canvas.toDataURL('image/png');a.download=name;a.click();}
